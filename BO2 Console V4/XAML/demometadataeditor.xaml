@@ -1,0 +1,247 @@
+<Window
+	x:Class="BO2_Console_V4.DemoMetadataEditor" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cwc="clr-namespace:ColorWheel.Controls;assembly=ColorWheel.Controls" xmlns:global="clr-namespace:ColorWheel.Core;assembly=ColorWheel.Core" xmlns:Controls="clr-namespace:Microsoft.Expression.Prototyping.Controls;assembly=Microsoft.Expression.Prototyping.Runtime" xmlns:Controls1="clr-namespace:ColorWheel.Controls;assembly=ColorWheel.Controls" xmlns:local="clr-namespace:BO2_Console_V4" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:Controls2="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit" xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" xmlns:WPF="clr-namespace:Microsoft.Toolkit.Win32.UI.Controls.WPF;assembly=Microsoft.Toolkit.Win32.UI.Controls"
+	Title="Demo Metadata Editor"
+	Height="424.186"
+	Width="438"
+	Style="{DynamicResource WindowStyle}"
+	WindowStyle="None">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="Style.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<WindowChrome.WindowChrome>
+		<WindowChrome
+			CaptionHeight="25"
+			ResizeBorderThickness="3"
+			UseAeroCaptionButtons="True" />
+	</WindowChrome.WindowChrome>
+	<Grid
+		Name="MainGrid"
+		IsEnabled="True">
+		<FrameworkElement.LayoutTransform>
+			<ScaleTransform
+				x:Name="ApplicationScaleTransform"
+				CenterX="0"
+				CenterY="0"
+				ScaleX="1"
+				ScaleY="1" />
+		</FrameworkElement.LayoutTransform>
+		<Button
+			Name="CancelButton"
+			Content="Cancel"
+			Margin="5,0,4,5"
+			VerticalAlignment="Bottom"
+			Height="23"
+			Click="CancelButton_Click" />
+		<Button
+			Name="FinishedButton"
+			Content="Done!"
+			Margin="5,0,4,33"
+			VerticalAlignment="Bottom"
+			Height="23"
+			Click="FinishedButton_Click" />
+		<TabControl
+			Name="Tabs"
+			Height="337"
+			Margin="0,10,0,0"
+			VerticalAlignment="Top"
+			SelectionChanged="TabControl_SelectionChanged">
+			<TabItem
+				Header="EMBED">
+				<Grid
+					MinHeight="362"
+					Margin="5,0">
+					<TextBox
+						Name="URLTextbox"
+						Grid.ColumnSpan="1"
+						HorizontalAlignment="Left"
+						Height="23"
+						Margin="0,55,0,0"
+						TextWrapping="Wrap"
+						Text=""
+						VerticalAlignment="Top"
+						Width="420"
+						TextChanged="URLTextbox_TextChanged" />
+					<Label
+						Content="URL:"
+						HorizontalAlignment="Left"
+						Margin="0,33,0,0"
+						VerticalAlignment="Top" />
+					<WPF:WebView
+						WebView.Name="demoPreviewerWebView"
+						Grid.Row="0"
+						FrameworkElement.HorizontalAlignment="Center"
+						FrameworkElement.Margin="0,112,0,0"
+						FrameworkElement.VerticalAlignment="Top"
+						FrameworkElement.Height="190"
+						FrameworkElement.Width="420"
+						x:Name="demoPreviewerWebView"
+						Loaded="demoPreviewerWebView_Loaded" />
+					<Grid
+						Name="StartEndTimeChangerGrid"
+						Visibility="Hidden"
+						Height="26"
+						Margin="0,81,0,0"
+						VerticalAlignment="Top"
+						Width="420">
+						<Label
+							Content="Start Time:"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Margin="0,3,0,0" />
+						<TextBox
+							Name="StartTimeTextbox"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="23"
+							Margin="72,2,0,0"
+							TextWrapping="Wrap"
+							Text=""
+							VerticalAlignment="Top"
+							Width="120"
+							TextChanged="StartTimeTextbox_TextChanged" />
+						<Label
+							Content="End Time:"
+							HorizontalAlignment="Left"
+							VerticalAlignment="Top"
+							Margin="239,6,0,0" />
+						<TextBox
+							Name="EndTimeTextbox"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="23"
+							Margin="300,3,0,0"
+							TextWrapping="Wrap"
+							Text=""
+							VerticalAlignment="Top"
+							Width="120"
+							TextChanged="EndTimeTextbox_TextChanged" />
+					</Grid>
+					<Grid
+						HorizontalAlignment="Left"
+						Height="25"
+						VerticalAlignment="Top"
+						Width="420"
+						Margin="0,3,0,0">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition />
+							<ColumnDefinition />
+							<ColumnDefinition />
+						</Grid.ColumnDefinitions>
+						<Button
+							Name="RecordNewClipButton"
+							Content="Record New Clip"
+							Margin="0,0,5,0"
+							Click="RecordNewClipButton_Click" />
+						<Button
+							Name="CancelRecordingButton"
+							Content="Cancel Recording"
+							Margin="5,0,5,0"
+							Grid.Column="1"
+							IsEnabled="False"
+							Click="CancelRecordingButton_Click" />
+						<Button
+							Name="SaveAndUploadButton"
+							Content="Save and Upload"
+							Margin="5,0,0,0"
+							Grid.Column="2"
+							IsEnabled="False"
+							Click="SaveAndUploadButton_Click" />
+					</Grid>
+				</Grid>
+			</TabItem>
+			<TabItem
+				Header="MISC">
+				<Grid
+					Margin="0"
+					MinWidth="246">
+					<TextBox
+						Name="AuthorTextBox"
+						Grid.ColumnSpan="1"
+						Height="23"
+						Margin="5,72,5,0"
+						TextWrapping="Wrap"
+						Text=""
+						VerticalAlignment="Top" />
+					<TextBox
+						Name="DescriptionTextbox"
+						Grid.ColumnSpan="1"
+						Height="129"
+						Margin="5,121,5,0"
+						TextWrapping="Wrap"
+						Text=""
+						VerticalAlignment="Top" />
+					<Label
+						Content="Author:"
+						HorizontalAlignment="Left"
+						Margin="5,50,0,0"
+						VerticalAlignment="Top" />
+					<Label
+						Content="Description:"
+						HorizontalAlignment="Left"
+						Margin="5,99,0,0"
+						VerticalAlignment="Top" />
+					<Label
+						Content="Player Index:"
+						HorizontalAlignment="Left"
+						Margin="5,257,0,0"
+						VerticalAlignment="Top" />
+					<TextBox
+						Name="PlayerIndexBox"
+						Grid.ColumnSpan="1"
+						Height="23"
+						Margin="82,255,146,0"
+						TextWrapping="Wrap"
+						Text=""
+						VerticalAlignment="Top" />
+					<Button
+						Content="Read Current Player"
+						HorizontalAlignment="Left"
+						Margin="289,255,0,0"
+						VerticalAlignment="Top"
+						Width="139"
+						Height="23"
+						Click="ReadCurrentPlayer_Click" />
+					<Label
+						Content="Start Tick:"
+						HorizontalAlignment="Left"
+						Margin="5,285,0,0"
+						VerticalAlignment="Top" />
+					<TextBox
+						Name="StartTickTextBox"
+						Grid.ColumnSpan="1"
+						Height="22"
+						Margin="65,283,146,0"
+						TextWrapping="Wrap"
+						Text=""
+						VerticalAlignment="Top" />
+					<Button
+						Content="Read Current Tick"
+						HorizontalAlignment="Left"
+						Margin="289,283,0,0"
+						VerticalAlignment="Top"
+						Width="139"
+						Height="22"
+						Click="Button_Click" />
+					<TextBox
+						Name="TitleTextBox"
+						Grid.ColumnSpan="1"
+						Height="23"
+						Margin="5,22,5,0"
+						TextWrapping="Wrap"
+						Text=""
+						VerticalAlignment="Top" />
+					<Label
+						Content="Title:"
+						HorizontalAlignment="Left"
+						Margin="5,0,0,0"
+						VerticalAlignment="Top" />
+				</Grid>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</Window>

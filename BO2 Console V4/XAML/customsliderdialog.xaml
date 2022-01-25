@@ -1,0 +1,155 @@
+<!--Class 'BO2_Console_V4.CustomSliderDialog' has IComponentConnector.Connect method, but cannot be parsed.-->
+<Window
+	x:Class="BO2_Console_V4.CustomSliderDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cwc="clr-namespace:ColorWheel.Controls;assembly=ColorWheel.Controls" xmlns:global="clr-namespace:ColorWheel.Core;assembly=ColorWheel.Core" xmlns:Controls="clr-namespace:Microsoft.Expression.Prototyping.Controls;assembly=Microsoft.Expression.Prototyping.Runtime" xmlns:Controls1="clr-namespace:ColorWheel.Controls;assembly=ColorWheel.Controls" xmlns:local="clr-namespace:BO2_Console_V4" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:Controls2="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit" xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit"
+	Title="Add a custom slider"
+	Height="300"
+	Width="480"
+	ResizeMode="NoResize"
+	Style="{DynamicResource WindowStyle}"
+	WindowStyle="None">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="Style.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<WindowChrome.WindowChrome>
+		<WindowChrome
+			CaptionHeight="25"
+			ResizeBorderThickness="3"
+			UseAeroCaptionButtons="True" />
+	</WindowChrome.WindowChrome>
+	<Grid
+		Name="MainGrid"
+		IsEnabled="True">
+		<FrameworkElement.LayoutTransform>
+			<ScaleTransform
+				x:Name="ApplicationScaleTransform"
+				CenterX="0"
+				CenterY="0"
+				ScaleX="1"
+				ScaleY="1" />
+		</FrameworkElement.LayoutTransform>
+		<Controls2:AutoCompleteBox
+			AutoCompleteBox.Name="DvarNameTextbox"
+			Control.TabIndex="0"
+			FrameworkElement.Margin="84,15,5,0"
+			FrameworkElement.VerticalAlignment="Top"
+			AutoCompleteBox.ValueMemberPath="Name"
+			AutoCompleteBox.ItemTemplate="{StaticResource DvarSearchTemplate}" />
+		<Label
+			Content="Dvar Name:"
+			HorizontalAlignment="Left"
+			Margin="5,17,0,0"
+			VerticalAlignment="Top"
+			Width="74" />
+		<Button
+			Name="SearchButton"
+			Content="Search"
+			Margin="5,41,5,0"
+			VerticalAlignment="Top"
+			Height="23" />
+		<Grid
+			Name="DvarInfoGrid"
+			Margin="0,69,0,35"
+			IsEnabled="False">
+			<TextBox
+				Name="DvarTypeTextbox"
+				Grid.ColumnSpan="1"
+				HorizontalAlignment="Left"
+				Height="23"
+				Margin="84,6,0,0"
+				TextWrapping="Wrap"
+				Text=""
+				VerticalAlignment="Top"
+				Width="389"
+				IsReadOnly="True" />
+			<Label
+				Content="Type:"
+				HorizontalAlignment="Left"
+				Margin="5,9,0,0"
+				VerticalAlignment="Top"
+				Width="74" />
+			<TextBox
+				Name="DvarCurrentTextbox"
+				Grid.ColumnSpan="1"
+				HorizontalAlignment="Left"
+				Height="23"
+				Margin="84,33,0,0"
+				TextWrapping="Wrap"
+				Text=""
+				VerticalAlignment="Top"
+				Width="389"
+				IsReadOnly="True" />
+			<Label
+				Content="Current:"
+				HorizontalAlignment="Left"
+				Margin="5,36,0,0"
+				VerticalAlignment="Top"
+				Width="74" />
+			<TextBox
+				Name="DvarMinTextbox"
+				Grid.ColumnSpan="1"
+				HorizontalAlignment="Left"
+				Height="23"
+				Margin="84,70,0,0"
+				TextWrapping="Wrap"
+				Text=""
+				VerticalAlignment="Top"
+				Width="389" />
+			<Label
+				Content="Min:"
+				HorizontalAlignment="Left"
+				Margin="5,73,0,0"
+				VerticalAlignment="Top"
+				Width="74" />
+			<TextBox
+				Name="DvarMaxTextbox"
+				Grid.ColumnSpan="1"
+				HorizontalAlignment="Left"
+				Height="23"
+				Margin="84,97,0,0"
+				TextWrapping="Wrap"
+				Text=""
+				VerticalAlignment="Top"
+				Width="389" />
+			<Label
+				Content="Max:"
+				HorizontalAlignment="Left"
+				Margin="5,100,0,0"
+				VerticalAlignment="Top"
+				Width="74" />
+			<Button
+				Name="FinishedButton"
+				Content="Done!"
+				Margin="5,153,5,0"
+				VerticalAlignment="Top"
+				Height="23" />
+			<TextBox
+				Name="FriendlyNameTextbox"
+				Grid.ColumnSpan="1"
+				HorizontalAlignment="Left"
+				Height="23"
+				Margin="100,125,0,0"
+				TextWrapping="Wrap"
+				Text=""
+				VerticalAlignment="Top"
+				Width="373"
+				MaxLength="20" />
+			<Label
+				Content="Friendly Name:"
+				HorizontalAlignment="Left"
+				Margin="5,128,0,0"
+				VerticalAlignment="Top"
+				Width="90" />
+		</Grid>
+		<Button
+			Name="CancelButton"
+			Content="Cancel"
+			Margin="5,252,5,0"
+			VerticalAlignment="Top"
+			Height="23" />
+	</Grid>
+</Window>

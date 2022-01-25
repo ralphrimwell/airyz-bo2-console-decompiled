@@ -1,0 +1,4441 @@
+<!--Class 'BO2_Console_V4.MainWindow' has IComponentConnector.Connect method, but cannot be parsed.-->
+<Window
+	x:Class="BO2_Console_V4.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cwc="clr-namespace:ColorWheel.Controls;assembly=ColorWheel.Controls" xmlns:global="clr-namespace:ColorWheel.Core;assembly=ColorWheel.Core" xmlns:Controls="clr-namespace:Microsoft.Expression.Prototyping.Controls;assembly=Microsoft.Expression.Prototyping.Runtime" xmlns:Controls1="clr-namespace:ColorWheel.Controls;assembly=ColorWheel.Controls" xmlns:local="clr-namespace:BO2_Console_V4" xmlns:gif="http://wpfanimatedgif.codeplex.com" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit" xmlns:Controls2="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit" xmlns:Custom="http://schemas.microsoft.com/wpf/2008/toolkit" xmlns:XAML="clr-namespace:BO2_Console_V4.XAML" xmlns:WPF="clr-namespace:Microsoft.Toolkit.Win32.UI.Controls.WPF;assembly=Microsoft.Toolkit.Win32.UI.Controls"
+	Name="BO2_Console_V4"
+	Height="641.784"
+	Width="910.4"
+	ResizeMode="CanResizeWithGrip"
+	WindowStyle="None"
+	Style="{DynamicResource WindowStyle}"
+	Title="BO2 Console V4"
+	Icon="icon.png">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="Style.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<WindowChrome.WindowChrome>
+		<WindowChrome
+			CaptionHeight="30"
+			ResizeBorderThickness="3"
+			UseAeroCaptionButtons="False" />
+	</WindowChrome.WindowChrome>
+	<Grid
+		Name="MainGrid"
+		Uid="d1ae0194-8ff5-5928-f1bb-98d7ac1a6c72"
+		Margin="0,10,0,0"
+		IsEnabled="True">
+		<Button
+			Name="CloseButton"
+			Uid="8a46c481-446b-e46a-4d8f-06cda2b3f188"
+			Content="X"
+			Margin="0,-28,1,0"
+			Width="25"
+			WindowChrome.IsHitTestVisibleInChrome="True"
+			HorizontalAlignment="Right"
+			Height="25"
+			VerticalAlignment="Top" />
+		<Button
+			Name="MinimiseButton"
+			Uid="90869081-4190-2ab3-fac1-a4ab75911c87"
+			Content="_"
+			Margin="0,-28,26,0"
+			Width="25"
+			WindowChrome.IsHitTestVisibleInChrome="True"
+			HorizontalAlignment="Right"
+			Height="25"
+			VerticalAlignment="Top"
+			FontSize="16" />
+		<Grid
+			Name="InactiveOverlay"
+			Uid="8f8948ea-79a9-501c-97c9-8366895bb73e"
+			ZIndex="100"
+			Background="#7F000000"
+			Visibility="Hidden"
+			Margin="0,0,0,0" />
+		<Grid
+			Name="TabGrid"
+			Uid="1b560fc9-dc94-3fe2-111b-8faaa0be6fbb"
+			Margin="0,0,0,5">
+			<FrameworkElement.LayoutTransform>
+				<ScaleTransform
+					x:Name="ApplicationScaleTransform"
+					CenterX="0"
+					CenterY="0"
+					ScaleX="1"
+					ScaleY="1" />
+			</FrameworkElement.LayoutTransform>
+			<TabControl
+				Name="MainTabs"
+				Uid="59e37f73-6229-07df-7435-f9c6bd4da19f"
+				Margin="5,-1,5,-3">
+				<TabItem
+					Uid="65e26509-003b-0df2-6649-7e8de972afd9"
+					Header="MENU">
+					<Grid
+						Uid="0af3c75a-5d78-6714-304e-a75ee21b82c4"
+						MinWidth="845"
+						MinHeight="290">
+						<Grid
+							Name="MainMenuGrid"
+							Uid="3aa0f07a-09db-7280-8cd5-f3dfe4511d01">
+							<Grid
+								Uid="f56b2085-965a-ac27-517b-34ed59932a4a"
+								HorizontalAlignment="Center"
+								Height="166"
+								Margin="0"
+								VerticalAlignment="Center"
+								Width="522">
+								<Separator
+									HorizontalAlignment="Center"
+									Height="7"
+									Margin="0,137,0,21"
+									VerticalAlignment="Center"
+									Width="276"
+									HorizontalContentAlignment="Center" />
+								<Separator
+									HorizontalAlignment="Center"
+									Height="7"
+									Margin="0,158,0,0"
+									VerticalAlignment="Center"
+									Width="276" />
+								<Label
+									Name="CurrentVersionLabel"
+									Uid="c2d8a630-8cb0-e46a-c9f4-e860d49319f8"
+									Content="v4.0.0"
+									HorizontalAlignment="Center"
+									Margin="316,142,124,8"
+									VerticalAlignment="Center"
+									Foreground="#FF878787"
+									HorizontalContentAlignment="Right"
+									Width="82" />
+								<Button
+									Name="RestoreAll"
+									Uid="b2bc55f7-68ba-3b9a-4f2f-30dd8c9c7cb4"
+									ToolTip="Restore all settings to default"
+									Content="RESTORE ALL"
+									HorizontalAlignment="Left"
+									Margin="122,42,0,0"
+									VerticalAlignment="Top"
+									Width="136"
+									Height="46"
+									FontWeight="Bold" />
+								<Button
+									Name="ReloadPointers"
+									Uid="c0f88567-581c-0ba0-76c8-9f95de90cb44"
+									ToolTip="Reattach to game process"
+									Content="RELOAD"
+									HorizontalAlignment="Left"
+									Margin="122,91,0,0"
+									VerticalAlignment="Top"
+									Width="136"
+									Height="46"
+									FontWeight="Bold" />
+								<Button
+									Name="SettingsButton"
+									Uid="7e68cbb2-66d6-423e-0fdd-da0ff4518386"
+									Content="SETTINGS"
+									HorizontalAlignment="Left"
+									Margin="261,91,0,0"
+									VerticalAlignment="Top"
+									Width="137"
+									Height="46"
+									FontWeight="Bold" />
+								<Button
+									Name="LoadCFGButton"
+									Uid="9371f99d-818c-9f00-b5b0-3bf2c8045cbf"
+									Content="LOAD ALL"
+									HorizontalAlignment="Left"
+									Margin="261,66,0,0"
+									VerticalAlignment="Top"
+									Width="137"
+									Height="22"
+									FontWeight="Bold"
+									IsEnabled="False" />
+								<Button
+									Name="SaveCFGButton"
+									Uid="c02beb63-fe33-01dd-46b6-b13e7e911724"
+									Content="SAVE ALL"
+									HorizontalAlignment="Left"
+									Margin="261,42,0,0"
+									VerticalAlignment="Top"
+									Width="137"
+									Height="22"
+									FontWeight="Bold"
+									IsEnabled="False" />
+							</Grid>
+							<Image
+								Name="waifu"
+								HorizontalAlignment="Right"
+								Height="200"
+								VerticalAlignment="Bottom"
+								Width="200" />
+							<Image
+								Name="waifu2"
+								HorizontalAlignment="Left"
+								Height="200"
+								VerticalAlignment="Bottom"
+								Width="200"
+								Margin="0,0,670,0" />
+						</Grid>
+						<Grid
+							Name="SettingsPanel"
+							Uid="e4f71944-381e-30b8-cbc9-c9252a4c790a"
+							Visibility="Hidden"
+							Background="#FF141414">
+							<Button
+								Name="BackButton"
+								Uid="08ab1b80-c326-9f52-1b70-4cd5d0c12023"
+								Content="&lt; Back"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+								Width="75"
+								Height="22" />
+							<TabControl
+								Name="SettingsTabControl"
+								Uid="afad1799-770d-2ba0-33fa-f56a34b8d6fa"
+								Margin="0,27,0,0">
+								<TabItem
+									Uid="63bea63c-0ee5-81fe-c657-c8aeebe25f09"
+									Header="Settings">
+									<Grid>
+										<Grid
+											Uid="138ca5a9-ca9e-08fd-7a80-d52ccde76a63"
+											HorizontalAlignment="Left"
+											Margin="0,0,-148,31"
+											Width="1023"
+											VerticalAlignment="Bottom">
+											<Button
+												Uid="2a985199-bc03-8a3e-192c-e8b5aff23f50"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="0,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFD50000" />
+											<Button
+												Uid="8fc1ec9a-c32c-725c-a8b5-e96539d1b3de"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="0,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF1744" />
+											<Button
+												Uid="991465ec-3549-ec05-6701-fa72e1485988"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="0,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF5252" />
+											<Button
+												Uid="e1918441-db26-d637-f526-814dd3d85147"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="0,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF8A80" />
+											<Button
+												Uid="49c80979-a5dd-6506-e7d4-282ac9ea9160"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="55,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFC51162" />
+											<Button
+												Uid="b424605c-d13f-11b8-2e3e-a423b3b7188e"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="55,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFF50057" />
+											<Button
+												Uid="d8f8b2af-0f80-9caa-7d2c-fa52b30c0c0b"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="55,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF4081" />
+											<Button
+												Uid="73f12195-9db4-a707-51b6-1b9f01e3b12f"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="55,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF80AB" />
+											<Button
+												Uid="167b99bb-b8f1-4ce0-b588-3613d7655e22"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="110,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFAA00FF" />
+											<Button
+												Uid="928e9831-a5c6-12da-ab51-87c9f40b9b9a"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="110,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFD500F9" />
+											<Button
+												Uid="1996cb7a-f691-dc1a-41a5-bd2c66f4cfeb"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="110,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFE040FB" />
+											<Button
+												Uid="686df958-1f54-1668-bf68-6b9f311657a9"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="110,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFEA80FC" />
+											<Button
+												Uid="0c989bed-44cf-3b90-7db2-5121e8adacb6"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="165,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF6200EA" />
+											<Button
+												Uid="fb719b82-329e-5b45-6280-5a288b7baa2a"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="165,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF651FFF" />
+											<Button
+												Uid="ca3f134d-c25c-131b-6831-eaa2ce472e11"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="165,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF7C4DFF" />
+											<Button
+												Uid="961db4bc-5ca5-ba0b-563c-aa4fea68b002"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="165,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFB388FF" />
+											<Button
+												Uid="d4d42607-e16e-bf5a-7f5d-936c47a38d1a"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="220,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF304FFE" />
+											<Button
+												Uid="d66c4852-145e-f184-0884-741f18cc28ff"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="220,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF3D5AFE" />
+											<Button
+												Uid="a79be881-5973-dba3-595d-1647c89e72b3"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="220,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF536DFE" />
+											<Button
+												Uid="a2fd8fae-d9fb-f2a4-a2e2-cce96c3ba7b3"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="220,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF8C9EFF" />
+											<Button
+												Uid="5feb9335-e607-f8a6-a491-7d00fe3c2869"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="275,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF2962FF" />
+											<Button
+												Uid="8870c112-85cf-a803-43a8-05908dba6e1e"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="275,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF2979FF" />
+											<Button
+												Uid="351263b6-13b3-c8ab-e804-fe6a5ca3f465"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="275,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF448AFF" />
+											<Button
+												Uid="aad762ba-1eca-afe3-8f42-1b5ee1166bea"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="275,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF82B1FF" />
+											<Button
+												Uid="9a4a5e22-f22a-feb6-16a8-9fca87994ca0"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="330,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF0091EA" />
+											<Button
+												Uid="2bd59fb4-c3e3-9754-7f62-a570f74ce7d2"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="330,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF00B0FF" />
+											<Button
+												Uid="fd481499-5959-c83a-abd8-94217f1928f6"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="330,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF40C4FF" />
+											<Button
+												Uid="41aa7bf6-4040-5e06-09b2-1bc84c4607c9"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="330,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF80D8FF" />
+											<Button
+												Uid="7331ccc1-4e51-5a46-650d-7f0a2f331766"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="385,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF00B8D4" />
+											<Button
+												Uid="7b79af39-a5a1-5991-0de9-f3a63d727b64"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="385,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF00E5FF" />
+											<Button
+												Uid="b25fcad0-b4e7-a7a5-344f-dc33c0fb2fd6"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="385,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF18FFFF" />
+											<Button
+												Uid="9d8eb49a-8bcc-1b28-3bd7-66675ba01cf2"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="385,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF84FFFF" />
+											<Button
+												Uid="643a1a92-65d3-857e-09d1-4751c95e9811"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="440,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF00BFA5" />
+											<Button
+												Uid="890b1cb9-dde4-4597-a243-770f4e3d4c93"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="440,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF1DE9B6" />
+											<Button
+												Uid="a5a1e932-cac1-3503-3609-93fb44d652dc"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="440,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF64FFDA" />
+											<Button
+												Uid="3eae553e-9395-b40d-83f5-c28fed6e36cc"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="440,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFA7FFEB" />
+											<Button
+												Uid="df1eb385-f3bd-ee4f-18d5-52db4a9c00cb"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="495,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF00C853" />
+											<Button
+												Uid="f9d19af1-0e8e-9ffe-dbec-22cc087447c7"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="495,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF00E676" />
+											<Button
+												Uid="9176c6d2-73b7-4b1f-05c0-25bf403269e6"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="495,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF69F0AE" />
+											<Button
+												Uid="529df7f4-3d9d-763d-b47f-03d0d182e6a4"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="495,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFB9F6CA" />
+											<Button
+												Uid="83098b8e-6f26-7e13-7b85-f3cee83e5ea9"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="550,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF64DD17" />
+											<Button
+												Uid="11d83c83-f4d6-9429-89ff-dc376f4e7a83"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="550,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FF76FF03" />
+											<Button
+												Uid="b53181da-e629-85bf-e31f-d7184a6e8e76"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="550,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFB2FF59" />
+											<Button
+												Uid="944d5a21-d4aa-99cd-6174-fa2792dc0e2d"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="550,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFCCFF90" />
+											<Button
+												Uid="67f46f0b-a80d-9d7f-7c52-2eb71d114a1a"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="605,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFAEEA00" />
+											<Button
+												Uid="15166670-e501-05d9-b398-53b5eb98f207"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="605,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFC6FF00" />
+											<Button
+												Uid="da0ca910-277a-7868-dab0-1857a6167b4f"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="605,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFB2FF59" />
+											<Button
+												Uid="2cb6e029-f9c5-252c-96ef-b37454cab1e3"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="605,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFCCFF90" />
+											<Button
+												Uid="73a6275f-7004-499f-fd9d-3a50cc825e9c"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="660,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFD600" />
+											<Button
+												Uid="0b8b041c-c6e1-1641-7de7-448a73f3230f"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="660,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFEA00" />
+											<Button
+												Uid="7ff734fe-0770-b94a-406d-2e27bedb5813"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="660,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFFF00" />
+											<Button
+												Uid="50581791-a63e-9901-e58f-f61d2b15d509"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="660,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFFF8D" />
+											<Button
+												Uid="97522b79-de8a-142c-b9d2-ca74981957a2"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="715,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFAB00" />
+											<Button
+												Uid="5cf9308e-d39b-58d0-325e-9ae0112d8d2b"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="715,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFC400" />
+											<Button
+												Uid="93ad2497-c089-b289-eb44-976cdb8d00cb"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="715,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFD740" />
+											<Button
+												Uid="fb8f5337-791b-a66e-5af9-652c444c028c"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="715,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFE57F" />
+											<Button
+												Uid="74dc9f45-c46c-cd19-a747-70573c647da5"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="770,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF6D00" />
+											<Button
+												Uid="bda8ce5d-929e-1e0f-b507-398f5b5c6d9f"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="770,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF9100" />
+											<Button
+												Uid="3b270a41-8cb1-735f-3ac1-53d408176af5"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="770,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFAB40" />
+											<Button
+												Uid="76cfbf7c-45a3-b2ed-90be-be648a89714b"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="770,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFFD180" />
+											<Button
+												Uid="3115d1da-413d-d1f3-6e35-82dc3e3b159e"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="825,1,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFDD2C00" />
+											<Button
+												Uid="9b13439c-f78d-fcfb-1d74-abf2cefae8b1"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="825,56,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF3D00" />
+											<Button
+												Uid="36fa084f-3901-3ab7-ccfd-076ec2107454"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="825,111,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF6E40" />
+											<Button
+												Uid="47c81fa9-d676-e3bd-d619-14c996000374"
+												Content=""
+												HorizontalAlignment="Left"
+												Margin="825,166,0,0"
+												VerticalAlignment="Top"
+												Width="50"
+												Height="50"
+												Background="#FFFF9E80" />
+										</Grid>
+										<ComboBox
+											Name="FontWeightSelector"
+											Uid="358dd14c-de41-639c-8cd8-cf8fef8d390c"
+											HorizontalAlignment="Left"
+											Margin="510,0,0,255"
+											VerticalAlignment="Bottom"
+											Width="120">
+											<ComboBoxItem
+												Uid="ae4956ff-a132-793b-4b17-60e724eda4cb"
+												Content="Light"
+												FontWeight="Light" />
+											<ComboBoxItem
+												Uid="f02193fa-3f83-ca13-8264-ba9d062ef349"
+												Content="Normal"
+												FontWeight="Normal" />
+											<ComboBoxItem
+												Uid="3fca08e0-54b7-ab41-9614-ea2a7db53e9e"
+												Content="Medium"
+												FontWeight="Medium" />
+											<ComboBoxItem
+												Uid="5b940434-486b-bf88-437e-2bcde69d721c"
+												Content="Bold"
+												FontWeight="Bold" />
+											<ComboBoxItem
+												Uid="1c071723-6423-a614-5276-5a6e55e94dcd"
+												Content="Extra Bold"
+												FontWeight="ExtraBold" />
+										</ComboBox>
+										<Label
+											Uid="02681c26-9799-97de-7f0a-fb382873c4f8"
+											Content="Font Weight:"
+											HorizontalAlignment="Left"
+											Margin="399,0,0,258"
+											VerticalAlignment="Bottom" />
+										<RadioButton
+											Name="DarkThemeToggle"
+											Uid="6606cda2-21ae-cf7a-f0ee-09f4ed1a6a5a"
+											Content="Dark Theme"
+											HorizontalAlignment="Left"
+											Margin="10,0,0,258"
+											VerticalAlignment="Bottom" />
+										<RadioButton
+											Name="LightThemeToggle"
+											Uid="caa75e31-7035-8b83-386f-9d1868db7dde"
+											Content="Light Theme"
+											HorizontalAlignment="Left"
+											Margin="114,0,0,258"
+											VerticalAlignment="Bottom" />
+										<ComboBox
+											Name="FontSizeSelector"
+											Uid="88cc62b2-e6e2-041f-a198-11aa8deaa964"
+											HorizontalAlignment="Left"
+											Margin="264,0,0,285"
+											VerticalAlignment="Bottom"
+											Width="120">
+											<ComboBoxItem
+												Uid="ca06a1a0-facc-31c2-497b-2d3e84626614"
+												Content="8"
+												FontSize="8" />
+											<ComboBoxItem
+												Uid="8b412b71-e14d-4b77-3ea3-289c5ed8fd4e"
+												Content="9"
+												FontSize="9" />
+											<ComboBoxItem
+												Uid="c77838c5-b2d4-b812-9f9b-3e67b8e0803f"
+												Content="10"
+												FontSize="10" />
+											<ComboBoxItem
+												Uid="6239fd31-1ea8-be17-29bb-8b28d126d271"
+												Content="11"
+												FontSize="11" />
+											<ComboBoxItem
+												Uid="4b78df7d-9fea-be3f-1989-ecb2a310925e"
+												Content="12"
+												FontSize="12" />
+											<ComboBoxItem
+												Uid="616ae822-9b9f-a7a5-21b9-9d1927e9e679"
+												Content="13"
+												FontSize="13" />
+											<ComboBoxItem
+												Uid="d8e9cdc8-3467-9255-bd7b-491f32641b19"
+												Content="14"
+												FontSize="14" />
+											<ComboBoxItem
+												Uid="e9052d28-71bb-e2d2-39d1-2a300226972f"
+												Content="15"
+												FontSize="15" />
+											<ComboBoxItem
+												Uid="d6ea72a3-b926-eef6-93d8-a423518674bc"
+												Content="16"
+												FontSize="16" />
+											<ComboBoxItem
+												Uid="f9f0849e-fde3-56bd-fb07-9f960a248f96"
+												Content="17"
+												FontSize="17" />
+											<ComboBoxItem
+												Uid="bf7b19e3-447a-6ef2-3717-55e2ccae90b2"
+												Content="18"
+												FontSize="18" />
+											<ComboBoxItem
+												Uid="7d916d5c-9d36-a64b-b593-db1e1a60e36e"
+												Content="19"
+												FontSize="19" />
+											<ComboBoxItem
+												Uid="38400e49-b50b-5942-9281-c2cca7da8a4d"
+												Content="20"
+												FontSize="20" />
+										</ComboBox>
+										<Label
+											Uid="9d39ed77-1192-4660-cdd5-0ae669d354d7"
+											Content="CFG Box Font Size:"
+											HorizontalAlignment="Left"
+											Margin="139,0,0,290"
+											VerticalAlignment="Bottom" />
+										<ComboBox
+											Name="WindowScaleSelector"
+											Uid="be99e634-576d-a7a7-2b38-ebb4db7ffeda"
+											HorizontalAlignment="Left"
+											Margin="752,0,0,255"
+											VerticalAlignment="Bottom"
+											Width="120">
+											<ComboBoxItem
+												Uid="2da78e09-4526-37db-aefa-6a36ab5bf0be"
+												Content="0.5" />
+											<ComboBoxItem
+												Uid="c097eb2d-cc41-1fdf-4592-725a26ab6a4d"
+												Content="0.75" />
+											<ComboBoxItem
+												Uid="dbdd2fd6-262b-eeb0-0b62-1073ec70fbcf"
+												Content="1" />
+											<ComboBoxItem
+												Uid="f0862c48-3de8-3d99-ae87-e794d3801002"
+												Content="1.25" />
+											<ComboBoxItem
+												Uid="7c5f1d8f-147d-0692-3aa9-b5debc6b32d4"
+												Content="1.5" />
+											<ComboBoxItem
+												Uid="f912a296-7a24-9865-95a0-2ca43f1c1a8a"
+												Content="1.75" />
+											<ComboBoxItem
+												Uid="cfe40d51-7f11-3352-9980-b53e87bb8143"
+												Content="2" />
+										</ComboBox>
+										<Label
+											Uid="31fd1254-176e-14de-b7c6-e6dce7eec71e"
+											Content="Window Scale:"
+											HorizontalAlignment="Left"
+											Margin="656,0,0,258"
+											VerticalAlignment="Bottom" />
+										<ComboBox
+											Name="AutofillModeSelector"
+											Uid="ae8c2b8e-6387-16c3-4fdf-5fa4c52610da"
+											HorizontalAlignment="Left"
+											Margin="752,0,0,284"
+											VerticalAlignment="Bottom"
+											Width="120">
+											<ComboBoxItem
+												Uid="2c4fe91f-e81e-3a1c-2fcf-174a99754cab"
+												Content="None" />
+											<ComboBoxItem
+												Uid="5caf96b8-d22e-f1bc-4fe6-e18eb7394f90"
+												Content="StartsWith" />
+											<ComboBoxItem
+												Uid="febd0bb5-9a9f-a500-0f51-7fb74b787dda"
+												Content="Contains" />
+										</ComboBox>
+										<Label
+											Uid="2eebb492-b477-4dac-2c5e-dd37078d83f5"
+											Content="Autofill Mode:"
+											HorizontalAlignment="Left"
+											Margin="656,0,0,288"
+											VerticalAlignment="Bottom" />
+										<ComboBox
+											Name="AutofillLimitSelector"
+											Uid="8e958780-4db8-1e0b-9609-4ddd5205a5d6"
+											HorizontalAlignment="Left"
+											Margin="510,0,0,285"
+											VerticalAlignment="Bottom"
+											Width="120">
+											<ComboBoxItem
+												Uid="02fc0769-204d-0119-5f6f-d141bcc89e81"
+												Content="10" />
+											<ComboBoxItem
+												Uid="c4368ace-eee3-4421-a9cd-986d67cffa27"
+												Content="25" />
+											<ComboBoxItem
+												Uid="00ce07b8-8091-60a7-6d94-2f487cca61cd"
+												Content="50" />
+											<ComboBoxItem
+												Uid="c80ecb6b-e1ce-7af3-e5b7-598087ac9990"
+												Content="100" />
+											<ComboBoxItem
+												Uid="b588a974-9efa-4df0-e2d6-564ebfd8c8de"
+												Content="250" />
+											<ComboBoxItem
+												Uid="9b02ca6c-31c0-d659-1353-1ad92627d8c1"
+												Content="500" />
+											<ComboBoxItem
+												Uid="d2d39efa-ab41-ccd3-dac0-e6f88ba4ba0c"
+												Content="1000" />
+											<ComboBoxItem
+												Uid="bd137aee-fea9-43cf-50b2-a1a7831627ba"
+												Content="All" />
+										</ComboBox>
+										<Label
+											Uid="215494fd-f504-c19d-f735-c0ff4b604b6f"
+											Content="Autofill Limit:"
+											HorizontalAlignment="Left"
+											Margin="400,0,0,289"
+											VerticalAlignment="Bottom" />
+										<TextBox
+											Name="ThemeHexCode"
+											Uid="abeb0d98-1a14-fc17-cf90-818f092c48c4"
+											Grid.ColumnSpan="1"
+											HorizontalAlignment="Left"
+											Height="22"
+											TextWrapping="Wrap"
+											VerticalAlignment="Bottom"
+											Width="120"
+											MaxLength="7"
+											Margin="0,0,0,3" />
+										<TextBox
+											Name="ThemeHexCode_Background"
+											Uid="f6fa2b99-9950-f908-dd51-c6743dd0f7ef"
+											Grid.ColumnSpan="1"
+											HorizontalAlignment="Left"
+											Height="22"
+											TextWrapping="Wrap"
+											VerticalAlignment="Bottom"
+											Width="120"
+											MaxLength="7"
+											Margin="125,0,0,3" />
+										<Button
+											Name="StreamableIntegrationButton"
+											Uid="760e3266-7b2b-e3a6-7c58-5273730eb8cb"
+											Content="Configure Streamable"
+											HorizontalAlignment="Left"
+											Margin="211,0,0,255"
+											VerticalAlignment="Bottom"
+											Width="173"
+											Height="25" />
+										<CheckBox
+											Name="PersistOnReload"
+											Uid="1f66fcec-5466-ff1f-05f1-cec254a3bffe"
+											ToolTip="When clicking 'Reload' button, settings from console will be re-applied to the game"
+											Content="Persist on Reload"
+											HorizontalAlignment="Left"
+											Margin="10,0,0,289"
+											VerticalAlignment="Bottom"
+											Width="124"
+											IsChecked="True" />
+									</Grid>
+								</TabItem>
+								<TabItem
+									Uid="d6289199-d21d-1e98-8517-7af8479485cf"
+									Header="Keybinds">
+									<Grid>
+										<Grid.ColumnDefinitions>
+											<ColumnDefinition
+												Width="60*" />
+											<ColumnDefinition
+												Width="233*" />
+										</Grid.ColumnDefinitions>
+										<ListView
+											Name="KeybindsList"
+											Uid="4088fa99-d769-1189-130f-7039ace38ed9"
+											HorizontalAlignment="Left"
+											Margin="10,10,0,32"
+											Width="858"
+											Grid.ColumnSpan="2">
+											<ListView.View>
+												<GridView>
+													<GridViewColumn
+														Header="Key"
+														Width="Auto"
+														DisplayMemberBinding="{Binding Key}" />
+													<GridViewColumn
+														Header="Type"
+														Width="Auto"
+														DisplayMemberBinding="{Binding Value.keybindType}" />
+													<GridViewColumn
+														Header="Value"
+														Width="Auto"
+														DisplayMemberBinding="{Binding Value.valueString}" />
+													<GridViewColumn
+														Header="Name"
+														Width="Auto"
+														DisplayMemberBinding="{Binding Value.FriendlyName}" />
+												</GridView>
+											</ListView.View>
+										</ListView>
+										<Button
+											Name="CustomKeybindButton"
+											Uid="e1da5398-e1e5-19ad-6447-994fda27b771"
+											Content="Custom..."
+											HorizontalAlignment="Left"
+											Margin="10,0,0,0"
+											VerticalAlignment="Bottom"
+											Width="108"
+											Height="27" />
+										<Button
+											Name="DeleteKeybindButton"
+											Uid="5929ff6c-7e1b-c195-0816-c30e615f71a2"
+											Content="Delete"
+											HorizontalAlignment="Left"
+											Margin="123,0,0,0"
+											VerticalAlignment="Bottom"
+											Width="108"
+											Height="27"
+											Grid.ColumnSpan="2" />
+									</Grid>
+								</TabItem>
+								<TabItem
+									Uid="f45fa188-a3b9-b8e9-4d6e-dc223e3937eb"
+									Header="Plugins">
+									<Grid>
+										<ListBox
+											Name="PluginListBox"
+											HorizontalAlignment="Left"
+											Margin="0,5,0,0"
+											Width="182" />
+										<TextBox
+											Name="PluginNameBox"
+											Uid="adcdff57-34b9-1abe-be19-d9ce1d9eb704"
+											Grid.ColumnSpan="1"
+											Height="31"
+											Margin="186,5,0,0"
+											TextWrapping="Wrap"
+											Text=""
+											VerticalAlignment="Top"
+											FontSize="20"
+											IsReadOnly="True" />
+										<TextBox
+											Name="PluginAuthorBox"
+											Uid="39c6f6d5-c3c8-c8b7-1570-0caca27283cf"
+											Grid.ColumnSpan="1"
+											Height="31"
+											Margin="223,41,0,0"
+											TextWrapping="Wrap"
+											Text=""
+											VerticalAlignment="Top"
+											FontSize="20"
+											IsReadOnly="True" />
+										<TextBox
+											Name="PluginDescBox"
+											Uid="62b7d7df-c491-54e8-e244-36a0ca1b9aae"
+											Grid.ColumnSpan="1"
+											Margin="186,127,0,0"
+											TextWrapping="Wrap"
+											Text=""
+											FontSize="14"
+											IsReadOnly="True" />
+										<CheckBox
+											Name="PluginEnabledBox"
+											Uid="474cd7b6-fd73-9423-4704-97492711784b"
+											Content="Enabled"
+											HorizontalAlignment="Left"
+											Margin="186,102,0,0"
+											VerticalAlignment="Top"
+											Height="16" />
+										<Label
+											Name="VerifiedPluginLabel"
+											Uid="45ef0a95-55e7-1172-0e72-56838c17fefa"
+											Content="Verified Plugin"
+											HorizontalAlignment="Right"
+											Margin="0,102,0,0"
+											VerticalAlignment="Top"
+											Height="25"
+											Visibility="Hidden" />
+										<TextBox
+											Name="PluginHash"
+											Uid="caf65ed6-3b25-e15b-b422-1b8d2c9f2cd1"
+											Grid.ColumnSpan="1"
+											Height="21"
+											Margin="223,77,0,0"
+											TextWrapping="Wrap"
+											Text=""
+											VerticalAlignment="Top"
+											FontSize="14"
+											IsReadOnly="True" />
+										<Label
+											Uid="c00aebcc-552c-61c6-643b-3901a7a00730"
+											Content="MD5:"
+											HorizontalAlignment="Left"
+											Margin="187,79,0,0"
+											VerticalAlignment="Top" />
+										<Label
+											Uid="c9739d06-ad1b-5a25-ae0d-91c439e5e46e"
+											Content="By:"
+											HorizontalAlignment="Left"
+											Margin="187,50,0,0"
+											VerticalAlignment="Top" />
+									</Grid>
+								</TabItem>
+							</TabControl>
+						</Grid>
+						<Grid
+							Name="LoginPanel"
+							Uid="a1b78545-3d0c-80cd-9794-65ea025a3a14"
+							Visibility="Hidden"
+							Background="#FF141414">
+							<Grid
+								Uid="8e87eb1b-632c-1eb5-c5b0-121ec301277f"
+								HorizontalAlignment="Center"
+								Height="77"
+								Margin="0"
+								VerticalAlignment="Center"
+								Width="424">
+								<TextBox
+									Name="LoginTextbox"
+									Uid="22bbca57-66e8-c823-d0f2-3186473b5753"
+									Grid.ColumnSpan="1"
+									HorizontalAlignment="Left"
+									Height="24"
+									Margin="40,0,0,0"
+									TextWrapping="Wrap"
+									VerticalAlignment="Top"
+									Width="328" />
+								<Label
+									Uid="4ea97dd3-555d-e141-cf98-db5b2aafbc96"
+									Content="Login:"
+									HorizontalAlignment="Left"
+									Margin="4,3,0,0"
+									VerticalAlignment="Top"
+									Foreground="#FF707070" />
+								<Label
+									Uid="3893e66d-179e-b52b-c7be-be3a312fd68a"
+									Content="Still have not registered?"
+									FontWeight="Light"
+									HorizontalAlignment="Left"
+									Margin="2,59,0,0"
+									VerticalAlignment="Top"
+									Foreground="#FF707070"
+									FontSize="12" />
+								<Label
+									Name="GetIDButton"
+									Uid="464bbf59-d858-0121-88da-53508ac89e20"
+									Content="Get ID now!"
+									FontWeight="Bold"
+									HorizontalAlignment="Left"
+									Margin="136,59,0,0"
+									VerticalAlignment="Top"
+									FontSize="12"
+									Cursor="Hand" />
+								<Button
+									Name="LoginButton"
+									Uid="61189b35-1ea7-bbb4-51f4-879f9707af9f"
+									Content="Enter"
+									HorizontalAlignment="Left"
+									Margin="40,31,0,0"
+									VerticalAlignment="Top"
+									Width="328"
+									Height="25"
+									Foreground="#FFFF6D00"
+									BorderBrush="#FFA6A6A6" />
+								<ProgressBar
+									Name="LoginProgress"
+									Uid="6b0250c1-7663-953d-c591-afc4c4da2aff"
+									HorizontalAlignment="Left"
+									Height="5"
+									Margin="40,25,0,0"
+									VerticalAlignment="Top"
+									Width="328" />
+							</Grid>
+							<Grid
+								Name="GetIDGrid"
+								Uid="96049d20-7516-3ae2-0b8f-f46350816a81"
+								Visibility="Hidden"
+								HorizontalAlignment="Center"
+								Margin="0,0,0,30"
+								Width="424"
+								VerticalAlignment="Bottom">
+								<TextBox
+									Name="NameTextbox"
+									Uid="398eb32a-32c5-bfbc-5d83-9b166feff777"
+									Grid.ColumnSpan="1"
+									HorizontalAlignment="Left"
+									Height="24"
+									Margin="40,0,0,0"
+									TextWrapping="Wrap"
+									VerticalAlignment="Top"
+									Width="328" />
+								<Label
+									Uid="f97f88c9-1902-4b88-6dc7-60d481da4443"
+									Content="Name:"
+									HorizontalAlignment="Left"
+									Margin="0,3,0,0"
+									VerticalAlignment="Top"
+									Foreground="#FF707070" />
+								<Label
+									Uid="10992e27-f04b-ed39-e045-3993dacccb1b"
+									Content="Your ID is:"
+									HorizontalAlignment="Left"
+									Margin="0,33,0,0"
+									VerticalAlignment="Top"
+									Foreground="#FF707070" />
+								<TextBox
+									Name="IDTextBox"
+									Uid="c79a7d97-7102-117e-2a43-cbfdd2e83e83"
+									Grid.ColumnSpan="1"
+									HorizontalAlignment="Left"
+									Height="24"
+									Margin="62,30,0,0"
+									TextWrapping="Wrap"
+									VerticalAlignment="Top"
+									Width="306"
+									BorderBrush="{x:Null}" />
+							</Grid>
+						</Grid>
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="40ef583e-e655-d82b-4f91-18bce0f571a1"
+					Header="CFG"
+					IsEnabled="False">
+					<Grid
+						Uid="033d45fc-7c40-b640-af88-e508243b1bf8"
+						MinWidth="550"
+						MinHeight="327">
+						<Label
+							Uid="8154b507-8add-b0c5-52c1-787158c13135"
+							Content="Send Single:"
+							HorizontalAlignment="Left"
+							Margin="0,13,0,0"
+							VerticalAlignment="Top"
+							Width="128" />
+						<Button
+							Name="SendSingle"
+							Uid="8c012ad1-3aab-c143-1839-90cd0022b413"
+							Content="Send"
+							HorizontalAlignment="Right"
+							Margin="0,10,2,0"
+							VerticalAlignment="Top"
+							Width="83"
+							Height="23" />
+						<TextBox
+							Name="tScaleBox"
+							Uid="2ab51f75-efa0-72c3-7f8c-b17f04ce5dee"
+							TabIndex="1"
+							Grid.ColumnSpan="1"
+							Height="23"
+							Margin="84,38,90,0"
+							TextWrapping="Wrap"
+							Text=""
+							VerticalAlignment="Top" />
+						<Label
+							Uid="fa36b057-8e3a-cd4d-7293-69a4f9f8af30"
+							Content="Timescale:"
+							HorizontalAlignment="Left"
+							Margin="0,41,0,0"
+							VerticalAlignment="Top"
+							Width="65" />
+						<Button
+							Name="sendTScale"
+							Uid="38fc640c-060c-e294-668e-0d1e89c3bd49"
+							Content="Send"
+							HorizontalAlignment="Right"
+							Margin="0,38,2,0"
+							VerticalAlignment="Top"
+							Width="83"
+							Height="23" />
+						<TextBox
+							Name="CFGText"
+							Uid="5076a2db-baeb-e6d9-d2e8-b70d851f7986"
+							TabIndex="3"
+							Grid.ColumnSpan="1"
+							Margin="0,88,0,32"
+							TextWrapping="Wrap"
+							Text=""
+							AcceptsReturn="True"
+							FontSize="16"
+							Panel.ZIndex="0" />
+						<Label
+							Uid="9f7280dc-24d2-50e2-1c54-93ab812e43ae"
+							Content="CFG"
+							HorizontalAlignment="Left"
+							Margin="0,66,0,0"
+							VerticalAlignment="Top"
+							Width="36" />
+						<Grid
+							Uid="56c820d6-5f82-5244-8b15-66234f875c47"
+							Height="25"
+							Margin="0,0,0,2"
+							VerticalAlignment="Bottom">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<Button
+								Name="LoadCFG"
+								Uid="08428615-1d51-b677-c025-3496262d65a3"
+								Content="Load CFG"
+								VerticalAlignment="Top"
+								Height="25"
+								Margin="0,0,5,0" />
+							<Button
+								Name="SendCFG"
+								Uid="653708a4-2256-7c04-3c1f-13bcbebe0094"
+								Content="Send CFG"
+								Grid.Column="1"
+								Margin="5,0"
+								VerticalAlignment="Top"
+								Height="25" />
+							<Button
+								Name="SaveCFG"
+								Uid="fa964bf8-3bec-b85c-a912-965c2bad2b5d"
+								Content="Save CFG"
+								Grid.Column="2"
+								Margin="5,0,0,0"
+								VerticalAlignment="Top"
+								Height="25" />
+						</Grid>
+						<Controls2:AutoCompleteBox
+							AutoCompleteBox.Name="SingleCommandTextbox"
+							UIElement.Uid="d1ae0194-8ff5-5928-f1bb-98d7ac1a6c72"
+							Control.TabIndex="0"
+							FrameworkElement.Margin="84,10,112,0"
+							FrameworkElement.VerticalAlignment="Top"
+							AutoCompleteBox.ValueMemberPath="Name"
+							AutoCompleteBox.ItemTemplate="{StaticResource DvarSearchTemplate}" />
+						<Separator
+							Height="5"
+							Margin="104,71,82,0"
+							VerticalAlignment="Top"
+							Width="400" />
+						<Expander
+							Name="CFGExpander"
+							FlowDirection="RightToLeft"
+							Margin="0,63,-1,32"
+							Header="CFGs"
+							HorizontalAlignment="Right"
+							Panel.ZIndex="1">
+							<ListBox
+								Name="CFGList"
+								Background="{DynamicResource DefaultBackground}"
+								Width="Auto"
+								Margin="0,3,0,-1" />
+						</Expander>
+						<Button
+							Name="AddToCFGButton"
+							Uid="467fc2af-f650-f2f0-82c5-cc320abaf802"
+							Style="{StaticResource ArrowButton}"
+							HorizontalAlignment="Right"
+							Height="23"
+							Margin="0,10,87,0"
+							VerticalAlignment="Top"
+							Width="23"
+							ToolTip="Add Command to CFG Box" />
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="db9e9f24-6b97-69b7-ac7f-bc448ca7518e"
+					Header="FOG"
+					IsEnabled="False">
+					<Grid
+						Uid="fb0cb6f3-ba3e-0244-5aa3-78276f2aaeee"
+						MinWidth="550"
+						MinHeight="520">
+						<Label
+							Uid="8b379319-500f-44c5-0b16-9ad139ac65da"
+							Content="Fog Start:"
+							HorizontalAlignment="Left"
+							Margin="0,10,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="90" />
+						<Slider
+							Name="FogBaseDistanceSlider"
+							Uid="533f3d73-fcad-6ac3-5b9c-80f4f28ff981"
+							Margin="185,8,10,0"
+							VerticalAlignment="Top"
+							Maximum="5000"
+							Value="200"
+							Minimum="-200"
+							Grid.ColumnSpan="2" />
+						<TextBox
+							Uid="f92acdd1-c670-a27f-f0c8-ef282072c8ae"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="100,8,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="79"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=FogBaseDistanceSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="31b39d3d-5aeb-1c41-d0cd-3072d0d1517b"
+							Content="Fog Fade:"
+							HorizontalAlignment="Left"
+							Margin="0,39,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="90" />
+						<Slider
+							Name="FogFadeSlider"
+							Uid="6b00181c-6c81-ad6a-be9c-62e50d9b4ae8"
+							Margin="185,37,10,0"
+							VerticalAlignment="Top"
+							Maximum="37000"
+							Value="36000"
+							Minimum="-200"
+							Grid.ColumnSpan="2" />
+						<TextBox
+							Uid="54b6d1d4-c8dc-7696-8c0e-28a2950cd11f"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="100,37,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="79"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=FogFadeSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="070b7476-5c72-d02d-3305-724ef75c0f34"
+							Content="Fog Height Fade:"
+							HorizontalAlignment="Left"
+							Margin="0,96,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="135" />
+						<Slider
+							Name="FogHeightFadeSlider"
+							Uid="ff9e4783-fd1a-539f-8189-df7343c717b1"
+							Margin="228,94,10,0"
+							VerticalAlignment="Top"
+							Maximum="90000"
+							Value="18070"
+							Minimum="-200" />
+						<TextBox
+							Uid="996e43cb-428f-7776-a4e5-21d655487e30"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="143,94,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="79"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=FogHeightFadeSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="4e1ff4fe-d26d-7904-d4b7-85e87dba8d6b"
+							Content="Sun Haze Inner Radius:"
+							HorizontalAlignment="Left"
+							Margin="0,196,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="184" />
+						<Slider
+							Name="SunHazeStartRadiusSlider"
+							Uid="b483c1ee-76ed-40a5-d027-5b35dbc8fe39"
+							Margin="255,194,10,0"
+							VerticalAlignment="Top"
+							Value="0"
+							Minimum="0"
+							Maximum="{Binding Value, ElementName=SunHazeEndRadiusSlider}" />
+						<TextBox
+							Uid="4f74af0b-c8a8-f844-3ef5-c4d7bc8df9ea"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="189,194,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="61"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=SunHazeStartRadiusSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="94e8b558-cac5-8842-4ede-7d4677cf9d0c"
+							Content="Sun Haze Outer Radius:"
+							HorizontalAlignment="Left"
+							Margin="0,169,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="189" />
+						<Slider
+							Name="SunHazeEndRadiusSlider"
+							Uid="cedd4cb9-3d45-25c3-7d8a-76f8b1cd8443"
+							Margin="255,167,10,0"
+							VerticalAlignment="Top"
+							Maximum="60"
+							Value="30" />
+						<TextBox
+							Uid="26dc712d-69e0-4074-6cec-00c94afd816f"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="189,167,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="61"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=SunHazeEndRadiusSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="701eb857-2baf-1ba4-f1c3-173a534ad681"
+							Content="Fog Opacity:"
+							HorizontalAlignment="Left"
+							Margin="0,124,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="110" />
+						<Slider
+							Name="FogBrightnessSlider"
+							Uid="06193a5a-77f2-4f2c-d79c-61593cfada7f"
+							Margin="228,122,10,0"
+							VerticalAlignment="Top"
+							Maximum="10"
+							Value="0.8"
+							Minimum="-10" />
+						<TextBox
+							Uid="f9a00609-13af-0193-ccc1-341c523aed22"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="169,122,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="53"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=FogBrightnessSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="106e7f15-7be3-e07c-8bce-9812c94adef6"
+							Content="Sun Haze Opacity:"
+							HorizontalAlignment="Left"
+							Margin="0,222,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="147" />
+						<Slider
+							Name="SunHazeBrightnessSlider"
+							Uid="4d3097e8-dca9-46d2-a617-3931430ffc9d"
+							Margin="255,220,10,0"
+							VerticalAlignment="Top"
+							Maximum="10"
+							Value="0.8"
+							Minimum="-10" />
+						<TextBox
+							Uid="bc433faf-c98c-8e9b-8abf-6ee07b803881"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="159,220,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="91"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=SunHazeBrightnessSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Grid
+							Uid="ba343de2-9f09-3978-ad27-69cc414b9d7c"
+							HorizontalAlignment="Left"
+							Height="170"
+							VerticalAlignment="Top"
+							Width="170"
+							Margin="29,283,0,0">
+							<Controls1:ColorWheelControl
+								ColorWheelControl.Name="FogColorWheel"
+								ColorWheelControl.Palette="{Binding Palette, Mode=OneWay}" />
+						</Grid>
+						<Grid
+							Uid="8a62fbd1-2206-1e6a-fba2-c2ea6ef1cb25"
+							HorizontalAlignment="Left"
+							Height="170"
+							VerticalAlignment="Top"
+							Width="170"
+							Margin="251,283,35,0"
+							Column="1">
+							<Controls1:ColorWheelControl
+								ColorWheelControl.Name="FogHazeColorWheel"
+								FrameworkElement.Margin="0,0,0,0"
+								ColorWheelControl.Palette="{Binding Palette, Mode=OneWay}" />
+						</Grid>
+						<Label
+							Uid="054fb7df-42db-1093-c70a-0f6460cf4c3f"
+							Content="Fog Color:"
+							HorizontalAlignment="Left"
+							Margin="29,258,0,0"
+							VerticalAlignment="Top"
+							FontSize="16" />
+						<Label
+							Uid="7f0ef122-ad1e-c07a-d215-be66dc8ecabb"
+							Content="Sun Haze Color:"
+							HorizontalAlignment="Left"
+							Margin="251,258,0,0"
+							VerticalAlignment="Top"
+							FontSize="16" />
+						<Slider
+							Name="BrightnessSlider"
+							Uid="89ec435b-97fc-8fa1-6752-c2fc1205be2c"
+							Margin="134,356,0,0"
+							VerticalAlignment="Top"
+							Maximum="255"
+							Value="0.8"
+							Minimum="0"
+							SmallChange="1"
+							RenderTransformOrigin="0.5,0.5"
+							HorizontalAlignment="Left"
+							Width="170">
+							<UIElement.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform />
+									<SkewTransform />
+									<RotateTransform
+										Angle="-90" />
+									<TranslateTransform />
+								</TransformGroup>
+							</UIElement.RenderTransform>
+						</Slider>
+						<Slider
+							Name="HazeBrightnessSlider"
+							Uid="7cc78355-4ce3-3107-3d8e-32c5832d3339"
+							Margin="360,356,0,0"
+							VerticalAlignment="Top"
+							Maximum="255"
+							Value="0.8"
+							Minimum="0"
+							SmallChange="1"
+							RenderTransformOrigin="0.5,0.5"
+							HorizontalAlignment="Left"
+							Width="176">
+							<UIElement.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform />
+									<SkewTransform />
+									<RotateTransform
+										Angle="-90" />
+									<TranslateTransform />
+								</TransformGroup>
+							</UIElement.RenderTransform>
+						</Slider>
+						<Label
+							Uid="1c095440-c3e3-8b42-4f7e-18cbeb7eadcc"
+							Content="Fog Height Start:"
+							HorizontalAlignment="Left"
+							Margin="0,68,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="135" />
+						<Slider
+							Name="FogHeightStartSlider"
+							Uid="58109256-4dc6-0fd7-3cba-4c6d64db0c3a"
+							Margin="228,66,10,0"
+							VerticalAlignment="Top"
+							Maximum="37000"
+							Value="2000"
+							Minimum="-200" />
+						<TextBox
+							Uid="bebc891f-a2fc-9249-413c-2c64343c46be"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="143,66,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="79"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=FogHeightStartSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Grid
+							Uid="f16e66e1-da1c-f272-7cfa-e02876d52674"
+							Height="25"
+							Margin="5,485,5,0"
+							VerticalAlignment="Top">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="2*" />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<ComboBox
+								Name="LoadFogPresetDropdown"
+								Uid="61abde72-efc2-b4d0-497d-178a2173daff"
+								Margin="0,0,8,0"
+								VerticalAlignment="Top"
+								Height="25" />
+							<Button
+								Name="SaveFogPresetButton"
+								Uid="fe8b8d74-1b6c-451d-17c9-4202c2201c6b"
+								Content="Save Preset"
+								Grid.Column="1"
+								Margin="2,0,5,0" />
+							<Button
+								Name="LoadFogPreset"
+								Uid="56f2b816-e591-f2fc-95ba-a79ec2e7d108"
+								Content="Load Preset"
+								Grid.Column="2"
+								Margin="5,0" />
+						</Grid>
+						<Grid
+							Uid="e8b4e01f-2749-5707-c065-49f8accdf228"
+							Height="25"
+							Margin="5,515,5,0"
+							VerticalAlignment="Top">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<Button
+								Name="AddFogToCFG"
+								Uid="6874ac61-8480-8e6d-9199-68b2737e832f"
+								Content="Add to CFG"
+								Margin="5,0,5,0"
+								Grid.Column="1" />
+							<Button
+								Name="ResetFogToDefault"
+								Uid="e1e339f8-336c-ee21-b19b-952b9b0345c7"
+								Content="Reset To Default"
+								Margin="0,0,5,0"
+								Grid.Column="0" />
+							<Button
+								Name="RandomFogButton"
+								Uid="153d7fc8-6873-9a88-7225-57b0bf54e441"
+								Content="Generate Random Fog"
+								Grid.Column="2"
+								Margin="5,0,5,0" />
+						</Grid>
+						<CheckBox
+							Name="SyncFogColorsToggle"
+							Uid="73ff1ae2-10ea-2dbb-8b86-b6e5ef42f38d"
+							Content="Sync Colors"
+							HorizontalAlignment="Left"
+							Margin="5,463,0,0"
+							VerticalAlignment="Top" />
+						<CheckBox
+							Name="SyncSunFogToSunColor"
+							Uid="f3eaa054-6d41-90bc-b148-6e47dc702e5c"
+							Content="Sync Sun Light to Fog"
+							HorizontalAlignment="Left"
+							Margin="114,463,0,0"
+							VerticalAlignment="Top" />
+						<XAML:Dial
+							Name="SunHazeAngleSlider"
+							ValueChanged="SunHazeAngleSlider_ValueChanged"
+							HorizontalAlignment="Left"
+							Height="50"
+							Margin="506,286,0,0"
+							VerticalAlignment="Top"
+							Width="50" />
+						<XAML:Dial
+							Name="SunHazePitchSlider"
+							ValueChanged="SunHazePitchSlider_ValueChanged"
+							HorizontalAlignment="Left"
+							Height="50"
+							Margin="506,387,0,0"
+							VerticalAlignment="Top"
+							Width="50" />
+						<Label
+							Uid="814953b6-d203-b7dc-c30f-8aedb1a2ab30"
+							Content="Sun Haze Yaw:"
+							HorizontalAlignment="Left"
+							Margin="474,259,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="114" />
+						<Label
+							Uid="1e5cc931-f06a-7400-5d6f-c2a2a274511a"
+							Content="Sun Haze Pitch:"
+							HorizontalAlignment="Left"
+							Margin="474,365,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="114" />
+						<TextBox
+							Uid="9b2e5a57-72f9-818a-c333-3031e3cede0e"
+							Grid.ColumnSpan="1"
+							HorizontalContentAlignment="Center"
+							TextAlignment="Center"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="486,341,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="90"
+							FontSize="16"
+							Text="{Binding Value, ElementName=SunHazeAngleSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<TextBox
+							Uid="12153e9c-1014-c6f1-53d4-2394103a144e"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="486,437,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="90"
+							FontSize="16"
+							TextAlignment="Center"
+							Text="{Binding Value, ElementName=SunHazePitchSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="57966fbd-1073-bf37-3fda-5a37bfce918e"
+					Header="THEATER"
+					IsEnabled="False">
+					<Grid
+						Uid="6405b391-3e5f-4606-6868-47244ef57189"
+						MinWidth="670"
+						MinHeight="532">
+						<CheckBox
+							Name="gsEnable"
+							Uid="7374e11e-8638-8c9b-0655-d33ab6ba0685"
+							Content="Green Screen"
+							HorizontalAlignment="Left"
+							Margin="10,61,0,0"
+							VerticalAlignment="Top"
+							Height="17"
+							Width="135" />
+						<Separator
+							Height="5"
+							Margin="10,90,10,0"
+							VerticalAlignment="Top"
+							Grid.Column="2" />
+						<CheckBox
+							Name="gpEnable"
+							Uid="5c029442-b034-7eef-694f-ee0bc8127049"
+							Content="Green Players"
+							HorizontalAlignment="Left"
+							Margin="10,99,0,0"
+							VerticalAlignment="Top"
+							Height="17"
+							Width="135" />
+						<Separator
+							Height="5"
+							Margin="10,208,10,0"
+							VerticalAlignment="Top"
+							Grid.Column="2" />
+						<Grid
+							Uid="de19d068-1d5a-0a55-1878-5d096bcb90ae"
+							Height="28"
+							Margin="10,218,10,0"
+							VerticalAlignment="Top"
+							Width="497">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<CheckBox
+								Name="depthEnable"
+								Uid="b9e2c261-15f3-6d54-f2f5-09e9988fc3f4"
+								Content="Depth"
+								HorizontalAlignment="Left"
+								Margin="0,4,0,0"
+								VerticalAlignment="Top" />
+							<RadioButton
+								Name="depthByFog"
+								Uid="e5d189e5-28a0-242a-3ef7-44bb53e5139d"
+								Content="FOG Method"
+								HorizontalAlignment="Center"
+								Margin="0"
+								VerticalAlignment="Center"
+								Grid.Column="1" />
+							<RadioButton
+								Name="depthByBuffer"
+								Uid="06aa3fbe-b630-5355-7cac-ec64146c7288"
+								Content="zBuffer Method"
+								HorizontalAlignment="Center"
+								Margin="0"
+								VerticalAlignment="Center"
+								IsChecked="True"
+								Grid.Column="2" />
+						</Grid>
+						<Separator
+							Height="5"
+							Margin="10,382,0,0"
+							VerticalAlignment="Top" />
+						<Grid
+							Name="greenPlayersGrid"
+							Uid="e12469b4-abfa-380e-97bd-7afbd098190c"
+							Height="82"
+							Margin="0,121,0,0"
+							VerticalAlignment="Top"
+							IsEnabled="False">
+							<TextBox
+								Uid="582a6ce2-bde5-2ec3-337d-69f43cc610d2"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="37,0,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="59"
+								FontSize="16"
+								TextAlignment="Center"
+								Text="{Binding Value, ElementName=playersRbar, Mode=TwoWay, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="playersRbar"
+								Uid="ea06bc85-31c1-13a3-3171-6e733b5a82e3"
+								Margin="101,0,10,0"
+								VerticalAlignment="Top"
+								Height="25"
+								Maximum="1024" />
+							<Label
+								Uid="a782df92-1941-f7a2-a5f6-ad7c4219fcd1"
+								Content="R:"
+								HorizontalAlignment="Left"
+								Margin="10,1,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="17" />
+							<TextBox
+								Uid="1475a8ac-2f91-b04a-c916-27734f50f2d9"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="37,26,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="59"
+								FontSize="16"
+								TextAlignment="Center"
+								Text="{Binding Value, ElementName=playersGbar, Mode=TwoWay, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="playersGbar"
+								Uid="5c6185fa-6843-6c90-190f-45cb8326d117"
+								Margin="101,26,10,0"
+								VerticalAlignment="Top"
+								Height="25"
+								Maximum="1024"
+								Value="1024" />
+							<Label
+								Uid="93c69d75-6ee4-6351-94d1-de2bf12fa754"
+								Content="G:"
+								HorizontalAlignment="Left"
+								Margin="10,27,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="18" />
+							<TextBox
+								Uid="bc81d403-9fb8-448d-1708-fa81ea7f2ca2"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="37,52,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="59"
+								FontSize="16"
+								TextAlignment="Center"
+								Text="{Binding Value, ElementName=playersBbar, Mode=TwoWay, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="playersBbar"
+								Uid="b1fd0f45-5e8a-8cf4-33fe-c77289657aea"
+								Margin="101,51,10,0"
+								VerticalAlignment="Top"
+								Height="25"
+								Maximum="1024" />
+							<Label
+								Uid="afc7f067-15a4-d65f-1082-7bdc74cf7915"
+								Content="B:"
+								HorizontalAlignment="Left"
+								Margin="10,53,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="17" />
+						</Grid>
+						<Controls1:ColorWheelControl
+							ColorWheelControl.Name="depthColorWheel"
+							FrameworkElement.Margin="29,246,0,0"
+							UIElement.RenderTransformOrigin="0.461,0.507"
+							FrameworkElement.HorizontalAlignment="Left"
+							FrameworkElement.VerticalAlignment="Top"
+							FrameworkElement.Width="120"
+							FrameworkElement.Height="120"
+							ColorWheelControl.Palette="{Binding Palette, Mode=OneWay}" />
+						<Slider
+							Name="depthBrightnessBar"
+							Uid="e1e63ca5-f631-a5ca-dff5-88bad71bbab2"
+							Margin="159,283,10,0"
+							VerticalAlignment="Top"
+							Maximum="255"
+							Value="255" />
+						<Label
+							Uid="f91a108d-7cb8-2ffd-b027-a108e2181764"
+							Content="Depth Brightness:"
+							HorizontalAlignment="Left"
+							Margin="159,257,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="161" />
+						<Grid
+							Uid="4dccb284-987f-71b9-2522-d0af8ca5fef4"
+							Height="55"
+							Margin="10,493,10,0"
+							VerticalAlignment="Top">
+							<Grid.RowDefinitions>
+								<RowDefinition />
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<CheckBox
+								Name="removeGun"
+								Uid="644ec9c7-7fb5-285d-3eb6-310954c2c2c7"
+								Content="Remove Gun"
+								HorizontalAlignment="Left"
+								Margin="5,6,0,6"
+								VerticalAlignment="Center"
+								Width="134" />
+							<CheckBox
+								Name="removeSkull"
+								Uid="243524de-6c4e-f432-56a8-d496ac4ea30b"
+								Content="Remove Skull"
+								HorizontalAlignment="Left"
+								Margin="5,4,0,4"
+								VerticalAlignment="Center"
+								Height="19"
+								Width="134"
+								Grid.Row="1" />
+							<CheckBox
+								Name="removePlayers"
+								Uid="1940ac28-b3ca-05ae-55a4-0ec967af1d63"
+								Content="Remove players"
+								HorizontalAlignment="Left"
+								Margin="5,6,0,6"
+								VerticalAlignment="Center"
+								Grid.Column="1"
+								Width="150" />
+							<CheckBox
+								Name="bloomTweaksToggle"
+								Uid="68d0095f-d96f-5ba6-9759-0d0dabc67bf0"
+								Content="Bloom tweaks"
+								HorizontalAlignment="Left"
+								Margin="5,4,0,4"
+								VerticalAlignment="Center"
+								Height="19"
+								Width="150"
+								Grid.Column="1"
+								Grid.Row="1" />
+							<CheckBox
+								Name="greenSkyToggle"
+								Uid="a7e02512-a981-2afc-752f-cfaa5d698da6"
+								Content="Green Sky"
+								HorizontalAlignment="Left"
+								Margin="5,4,0,4"
+								VerticalAlignment="Center"
+								Height="20"
+								Width="156"
+								Grid.Column="2" />
+							<CheckBox
+								Name="tBarrierRemove"
+								Uid="a336708a-3b7d-4f9b-06e4-8270a5a05a8e"
+								Content="Remove Theatre Barrier"
+								HorizontalAlignment="Left"
+								Margin="5,4,0,4"
+								VerticalAlignment="Center"
+								Height="19"
+								Width="170"
+								Grid.Column="2"
+								Grid.Row="1" />
+							<CheckBox
+								Name="WireframeToggle"
+								Uid="41b61e28-76cf-b6e1-0ca6-f2400afcfe2d"
+								Content="Wireframe"
+								Grid.Column="3"
+								HorizontalAlignment="Left"
+								Margin="5,4,0,4"
+								VerticalAlignment="Center" />
+							<CheckBox
+								Name="ParticlesToggle"
+								Uid="3a8266cc-d890-d772-8991-a09d278c85d4"
+								Content="Remove Particles"
+								Grid.Column="3"
+								HorizontalAlignment="Left"
+								Margin="5,4,0,4"
+								VerticalAlignment="Center"
+								Grid.Row="1" />
+						</Grid>
+						<Grid
+							Uid="3e8140d5-4bb2-14d7-8e80-97d7485b440a"
+							Height="17"
+							Margin="150,61,10,0"
+							VerticalAlignment="Top">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<RadioButton
+								Name="gsR"
+								Uid="3fa454e6-1f1e-50fe-acdf-b83dd5448e80"
+								Content="Red"
+								HorizontalAlignment="Center"
+								Margin="0"
+								VerticalAlignment="Center"
+								Height="16"
+								Width="60"
+								IsChecked="False" />
+							<RadioButton
+								Name="gsG"
+								Uid="c96a1d20-bf7a-807b-8e6e-ab10409b8e2e"
+								Content="Green"
+								HorizontalAlignment="Center"
+								Margin="0"
+								VerticalAlignment="Center"
+								IsChecked="True"
+								Grid.Column="1"
+								Height="16"
+								Width="60" />
+							<RadioButton
+								Name="gsB"
+								Uid="d3b6964c-46e7-b6b6-4231-92d293993f4a"
+								Content="Blue"
+								HorizontalAlignment="Center"
+								Margin="0"
+								VerticalAlignment="Center"
+								IsChecked="False"
+								Grid.Column="2"
+								Height="16"
+								Width="60" />
+							<RadioButton
+								Name="gsP"
+								Uid="2bb617f1-7bf1-278f-d823-b0b073ed0f11"
+								Content="Purple"
+								HorizontalAlignment="Center"
+								Margin="0"
+								VerticalAlignment="Center"
+								IsChecked="False"
+								Grid.Column="3"
+								Height="16"
+								Width="60" />
+						</Grid>
+						<Slider
+							Name="DepthDistanceSlider"
+							Uid="3ef08a50-bb8e-da98-66b4-86492da8edf4"
+							Margin="159,341,10,0"
+							VerticalAlignment="Top"
+							Maximum="10000"
+							Value="2000" />
+						<Label
+							Uid="291e612e-62e4-d13c-078e-fac395064254"
+							Content="Depth Distance:"
+							HorizontalAlignment="Left"
+							Margin="159,318,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="326" />
+						<TextBox
+							Uid="09828021-01a8-35bb-7edb-c53df445fa2f"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="281,317,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="146"
+							FontSize="16"
+							Text="{Binding Value, ElementName=DepthDistanceSlider, Mode=TwoWay, StringFormat={}{0:N0}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<CheckBox
+							Name="PlayersAlphaCheckbox"
+							Uid="1281bb35-e5cf-ed2c-4d1f-37ffc0d4455f"
+							Content="Player Luma Matte"
+							HorizontalAlignment="Left"
+							Margin="145,99,0,0"
+							VerticalAlignment="Top"
+							Height="17"
+							Width="151" />
+						<Grid
+							Name="NormalMapGrid"
+							Uid="ac273172-e426-2d4c-a5e9-aa099dffddc1"
+							Height="69"
+							Margin="15,416,10,0"
+							VerticalAlignment="Top">
+							<Grid.RowDefinitions>
+								<RowDefinition />
+								<RowDefinition />
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<RadioButton
+								Name="NormalPassDefaultRadioButton"
+								Uid="da8dcb94-3084-3b85-5494-bb89c9bc74a9"
+								Content="None"
+								VerticalAlignment="Center"
+								HorizontalAlignment="Center"
+								DataContext="0" />
+							<RadioButton
+								Uid="c2ca6596-4e1d-5108-6f54-6ce53b234f4d"
+								Content="Surface Binormal"
+								VerticalAlignment="Center"
+								Grid.Row="1"
+								HorizontalAlignment="Center"
+								DataContext="3" />
+							<RadioButton
+								Uid="f56a7541-6a47-41db-abec-579229c263e9"
+								Content="Surface Normal"
+								VerticalAlignment="Center"
+								Grid.Row="1"
+								Grid.Column="1"
+								HorizontalAlignment="Center"
+								DataContext="4" />
+							<RadioButton
+								Uid="38720074-1a34-46a3-c23c-6b30c3a00030"
+								Content="Normal"
+								VerticalAlignment="Center"
+								Grid.Column="1"
+								HorizontalAlignment="Center"
+								DataContext="1" />
+							<RadioButton
+								Uid="54486e44-7f51-2b62-8988-1731f67628ad"
+								Content="Lightmap"
+								VerticalAlignment="Center"
+								Grid.Row="1"
+								Grid.Column="2"
+								HorizontalAlignment="Center"
+								DataContext="5" />
+							<RadioButton
+								Uid="3a7182f0-17b0-2718-d123-330affaa7e0b"
+								Content="Surface Tangent"
+								VerticalAlignment="Center"
+								Grid.Column="2"
+								HorizontalAlignment="Center"
+								DataContext="2" />
+						</Grid>
+						<Separator
+							Height="5"
+							Margin="10,483,0,0"
+							VerticalAlignment="Top" />
+						<Label
+							Name="___No_Name_"
+							Uid="ba4e26eb-0f7a-f597-9e47-aeab0372504c"
+							Content="Normal Pass:"
+							HorizontalAlignment="Left"
+							Margin="15,391,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="161" />
+						<ComboBox
+							Name="MaterialsPatchSelector"
+							Uid="413fbd14-c62e-2d80-5520-822d4b582bdf"
+							HorizontalAlignment="Right"
+							Margin="0,391,10,0"
+							VerticalAlignment="Top"
+							Width="160">
+							<ComboBoxItem
+								Uid="cf460b0a-6d27-e132-ea7b-9c69686d245f"
+								Content="None" />
+							<ComboBoxItem
+								Uid="41f5e6d3-3d6a-25dc-a621-65598d6aa945"
+								Content="Dynamic Models" />
+							<ComboBoxItem
+								Uid="f7a1cf1b-812b-a724-8a5e-56b32917c5e8"
+								Content="All Models" />
+						</ComboBox>
+						<Label
+							Uid="655a22fc-e962-cd74-2e21-280607d95480"
+							Content="Material Patch:"
+							HorizontalAlignment="Right"
+							Margin="0,392,174,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="113" />
+						<CheckBox
+							Name="IncludeWeaponsInPlayerPass"
+							Uid="984d56d1-2ccc-5234-c24d-b60ce729fb8f"
+							Content="Include Weapons"
+							HorizontalAlignment="Left"
+							Margin="363,99,0,0"
+							VerticalAlignment="Top"
+							Height="17"
+							Width="151" />
+						<Grid
+							Uid="6a5c7d5c-440f-32e2-5bd3-c80a581da0b1"
+							HorizontalAlignment="Left"
+							Height="30"
+							Margin="10,10,0,0"
+							VerticalAlignment="Top"
+							Width="874">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="2*" />
+								<ColumnDefinition
+									Width="1*" />
+								<ColumnDefinition
+									Width="1*" />
+								<ColumnDefinition
+									Width="8*" />
+							</Grid.ColumnDefinitions>
+							<Label
+								Name="TickLabel"
+								Uid="d3e1d50a-2cc9-d01c-ee08-a2143267e605"
+								Content="00:00"
+								HorizontalContentAlignment="Center"
+								HorizontalAlignment="Center"
+								Margin="0,6"
+								VerticalAlignment="Center"
+								Grid.Column="2"
+								Width="78" />
+							<Button
+								Name="SaveTickButton"
+								Uid="89aa9926-e97c-8d70-741b-3df8632af9a5"
+								Content="Save"
+								Grid.Column="1"
+								Margin="5,0"
+								VerticalAlignment="Center"
+								Height="20" />
+							<Button
+								Name="GoToTickButton"
+								Uid="110205ad-2747-2fc5-618c-7c07a1cdfff3"
+								Content="Go To Time"
+								Margin="5,0"
+								VerticalAlignment="Center"
+								Height="20" />
+							<ProgressBar
+								Name="TheaterProgressBar"
+								Uid="bfe3c3ec-1672-2034-6454-5faeef236cc4"
+								Grid.Column="3"
+								Height="10"
+								Margin="5,0"
+								VerticalAlignment="Center" />
+						</Grid>
+						<Separator
+							Height="5"
+							Margin="10,43,10,0"
+							VerticalAlignment="Top" />
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="2d67fd0e-d465-febd-d37b-28f06c69eba6"
+					Header="SSAO"
+					IsEnabled="False">
+					<Grid
+						Uid="a00c4a1c-3a46-9632-d0e1-adf3c816403e"
+						MinWidth="553"
+						MinHeight="205">
+						<CheckBox
+							Name="ssaoToggle"
+							Uid="a4f9b81f-d166-178d-05e5-ebf7ee44b4fb"
+							HorizontalAlignment="Left"
+							Panel.ZIndex="100"
+							Margin="9,10,0,0"
+							VerticalAlignment="Top"
+							Content="Enable SSAO"
+							Height="17"
+							Width="96" />
+						<Grid
+							Uid="a492b969-cc17-d47d-cbd0-5c8327ca36bc"
+							IsEnabled="{Binding IsChecked, ElementName=ssaoToggle}">
+							<Label
+								Uid="b4d0e93a-466f-4a3f-bcf4-9a614e3ba88c"
+								Content="SSAO Scale:"
+								HorizontalAlignment="Left"
+								Margin="10,39,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="133" />
+							<TextBox
+								Uid="0f8ab22d-9b84-5227-3a24-d9957509f03b"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="148,39,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="52"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=ssaoScaleBar, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="ssaoScaleBar"
+								Uid="04bc2eaf-ff73-228b-7948-e822321c858f"
+								Margin="203,40,10,0"
+								VerticalAlignment="Top"
+								Maximum="512"
+								Value="50" />
+							<Label
+								Uid="7556cf28-2640-9e38-c27d-794a6daad4b2"
+								Content="SSAO Radius:"
+								HorizontalAlignment="Left"
+								Margin="10,68,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="133" />
+							<TextBox
+								Uid="1fb15f04-a37e-2d18-2667-963bb304201e"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="148,68,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="52"
+								FontSize="16"
+								TextAlignment="Right"
+								RenderTransformOrigin="0.5,0.5"
+								Text="{Binding Value, ElementName=ssaoRadiusBar, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="ssaoRadiusBar"
+								Uid="a56c499e-7ab3-88fa-f51d-41f58640b4cf"
+								Margin="203,68,10,0"
+								VerticalAlignment="Top"
+								Maximum="1024"
+								Value="12" />
+							<Label
+								Uid="d31e3573-666a-8511-b728-4ed890fdebbe"
+								Content="SSAO Bias:"
+								HorizontalAlignment="Left"
+								Margin="10,97,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="133" />
+							<TextBox
+								Uid="23ac5a5d-2f3d-89fe-6429-29606122a7e6"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="148,97,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="52"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=ssaoBiasBar, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="ssaoBiasBar"
+								Uid="7ec8c7b2-4de5-38b3-37e7-ee8b2c22f8f8"
+								Margin="203,97,10,0"
+								VerticalAlignment="Top"
+								Maximum="1"
+								Value="0.55"
+								SmallChange="0.01" />
+							<Label
+								Uid="2b988332-9194-4492-3694-6e413cb02494"
+								Content="SSAO Intensity:"
+								HorizontalAlignment="Left"
+								Margin="10,126,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="133" />
+							<TextBox
+								Uid="c9256881-6d34-10d8-a773-ec5541735d41"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="148,126,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="52"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=ssaoIntensityBar, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="ssaoIntensityBar"
+								Uid="de2e3030-7b8a-2151-3584-4750de72fc87"
+								Margin="203,126,10,0"
+								VerticalAlignment="Top"
+								Maximum="9"
+								Value="1"
+								SmallChange="0.01" />
+							<Button
+								Name="SendSSAOtoCFGButton"
+								Uid="c30a59c3-2ffd-c4c4-aa88-8421a53c02c3"
+								Content="Add to CFG"
+								Margin="10,186,10,0"
+								VerticalAlignment="Top"
+								Height="25"
+								ToolTip="Send sun settings to the CFG Box" />
+							<Label
+								Uid="0b102d37-4582-050a-1703-94b025873134"
+								Content="SSAO Distance:"
+								HorizontalAlignment="Left"
+								Margin="10,156,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Height="21"
+								Width="133" />
+							<TextBox
+								Uid="e7926477-9a68-0144-6c69-3301f6307cf8"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="148,156,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="52"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=ssaoDistanceSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Slider
+								Name="ssaoDistanceSlider"
+								Uid="b1198381-f061-7d04-4f04-acf99b139e22"
+								Margin="203,156,10,0"
+								VerticalAlignment="Top"
+								IsDirectionReversed="True"
+								Maximum="9"
+								Value="4"
+								SmallChange="0.01"
+								Minimum="0.05" />
+						</Grid>
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="40aa4f56-1baa-9d5a-e80f-9f1812080fe6"
+					Header="DOF"
+					IsEnabled="False">
+					<Grid
+						Uid="a22f9b86-806e-86d3-6014-9864ee4b6559"
+						MinWidth="550"
+						MinHeight="405">
+						<CheckBox
+							Name="DOFEnable"
+							Uid="a7ab10ca-3c86-654e-297c-c95251ec6b46"
+							Panel.ZIndex="100"
+							Content="Enable DOF"
+							HorizontalAlignment="Left"
+							Margin="9,10,0,0"
+							VerticalAlignment="Top"
+							Grid.ColumnSpan="2" />
+						<Grid
+							Uid="ff72c5f5-fce3-d6b4-7c23-e09583f6af9d"
+							IsEnabled="{Binding IsChecked, ElementName=DOFEnable}">
+							<Label
+								Uid="014e46a9-685d-4a60-4dc9-78f2b7803573"
+								Content="Far Blur:"
+								HorizontalAlignment="Left"
+								Margin="10,39,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFFarBlurSider"
+								Uid="286f51a9-65d8-cd75-5cd4-2a635cb8e233"
+								Margin="212,41,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="10"
+								Value="1.2"
+								Minimum="0"
+								Height="24" />
+							<TextBox
+								Uid="0ba92bcc-699d-8de9-6428-b21a84c21ffb"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="116,38,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="85"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFFarBlurSider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="31ec6ced-8686-43c5-d080-a5883dfded94"
+								Content="Far Start:"
+								HorizontalAlignment="Left"
+								Margin="10,68,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFFarStartSlider"
+								Uid="8b2545e6-2ad7-3fd6-67e2-c4afb35a4999"
+								Margin="212,69,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="1000"
+								Value="100"
+								Minimum="0"
+								Height="25" />
+							<TextBox
+								Uid="f0752eb5-b0cc-46ac-6665-3a1dc4604f67"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="116,67,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="85"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFFarStartSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="3e331e3a-939d-c224-95ac-caa4c2159076"
+								Content="Far End:"
+								HorizontalAlignment="Left"
+								Margin="10,97,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFFarEndSlider"
+								Uid="0fd30b37-fd87-35c8-98de-2572f0b97a06"
+								Margin="212,98,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="7000"
+								Value="500"
+								Height="24"
+								Minimum="{Binding Value, ElementName=DOFFarStartSlider}" />
+							<TextBox
+								Uid="95745c92-0a26-21fc-0ab2-5a1fe6088451"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="116,96,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="85"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFFarEndSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="b9e5c3d5-408d-3ddf-56fd-a5be6eb2d2dc"
+								Content="Near Blur:"
+								HorizontalAlignment="Left"
+								Margin="10,145,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFNearBlurSlider"
+								Uid="6511c331-fba0-2c4f-0eb1-05d4a2a84f90"
+								Margin="212,145,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="10"
+								Value="1.2"
+								Minimum="0"
+								Height="24" />
+							<TextBox
+								Uid="2c9cd35a-c1d3-5279-7d37-3f29653eb357"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="116,144,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="85"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFNearBlurSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="22ee7de0-1ef6-dab0-74b9-aadc3b0a9aad"
+								Content="Near Start:"
+								HorizontalAlignment="Left"
+								Margin="10,174,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFNearStartSlider"
+								Uid="9a6414ae-a515-6f09-4abf-e768bb26c7d0"
+								Margin="212,173,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="900"
+								Value="100"
+								Minimum="0"
+								Height="24" />
+							<TextBox
+								Uid="25f4adfd-2cb9-3b9a-22c2-b819179c1772"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="116,173,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="85"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFNearStartSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="507a919c-18d9-3b41-737e-d83737481e4e"
+								Content="Near End:"
+								HorizontalAlignment="Left"
+								Margin="10,203,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFNearEndSlider"
+								Uid="8dded9f2-7416-81f3-7a28-7853edf058ad"
+								Margin="212,201,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="900"
+								Value="500"
+								Height="25"
+								Minimum="{Binding Value, ElementName=DOFNearStartSlider}" />
+							<TextBox
+								Uid="2acb74a7-77ab-e5f6-6bb9-b13b546304da"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="24"
+								Margin="116,202,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="85"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFNearEndSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="3e276aa4-89be-275c-9df8-d5b1a0ee4d83"
+								Content="Viewmodel Start:"
+								HorizontalAlignment="Left"
+								Margin="10,253,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Grid.ColumnSpan="2" />
+							<Slider
+								Name="DOFViewmodelStartSlider"
+								Uid="c28f2a26-f37c-7ba2-e2f9-225cc3b82d17"
+								Margin="257,252,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="50"
+								Value="0"
+								Minimum="0"
+								Height="25" />
+							<TextBox
+								Uid="82af9d24-1ac9-1eef-18a3-8db2a145447c"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="22"
+								Margin="170,253,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="72"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFViewmodelStartSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="29152e6b-42d3-b05e-c7ac-5bc4670064e5"
+								Content="Viewmodel End:"
+								HorizontalAlignment="Left"
+								Margin="10,282,0,0"
+								VerticalAlignment="Top"
+								FontSize="16"
+								Grid.ColumnSpan="2" />
+							<Slider
+								Name="DOFViewmodelEndSlider"
+								Uid="028dbecb-cb3f-0bb9-3b71-aad866efd99d"
+								Margin="257,279,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="50"
+								Value="0"
+								Minimum="0"
+								Height="24" />
+							<TextBox
+								Uid="94f1a5b4-04a2-e143-3ffe-bb1dbe2ab717"
+								Grid.ColumnSpan="1"
+								HorizontalAlignment="Left"
+								Height="22"
+								Margin="170,280,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="72"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFViewmodelEndSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="e3e7a83f-42b8-a03d-7409-ee6298864ad7"
+								Content="Bias:"
+								HorizontalAlignment="Left"
+								Margin="10,339,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFBiasSlider"
+								Uid="c110bed2-d00e-c642-7aab-c3400f9c4d10"
+								Margin="187,339,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="1"
+								Value="0.5"
+								Minimum="0"
+								Height="25" />
+							<TextBox
+								Uid="be9992b9-f508-72e5-6850-1f9915e149b9"
+								Grid.ColumnSpan="2"
+								HorizontalAlignment="Left"
+								Height="22"
+								Margin="132,339,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="50"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFBiasSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Label
+								Uid="004ae3b4-f51a-6e08-6520-690c7efc90d8"
+								Content="Quality:"
+								HorizontalAlignment="Left"
+								Margin="10,368,0,0"
+								VerticalAlignment="Top"
+								FontSize="16" />
+							<Slider
+								Name="DOFQualitySlider"
+								Uid="06a8debc-8bec-dccf-d99d-59beb0a9b098"
+								Margin="187,368,10.2,0"
+								VerticalAlignment="Top"
+								Maximum="2"
+								Value="2"
+								Height="24"
+								SmallChange="1"
+								IsSnapToTickEnabled="True" />
+							<TextBox
+								Uid="2c8c0a62-4c51-c3f5-892a-58e78cd8f36b"
+								Grid.ColumnSpan="2"
+								HorizontalAlignment="Left"
+								Height="22"
+								Margin="132,368,0,0"
+								TextWrapping="Wrap"
+								VerticalAlignment="Top"
+								Width="50"
+								FontSize="16"
+								TextAlignment="Right"
+								Text="{Binding Value, ElementName=DOFQualitySlider, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+								BorderBrush="{x:Null}" />
+							<Button
+								Name="SendDOFtoCFGButton"
+								Uid="37dc47c0-4338-28cc-136d-267c9c4abdbc"
+								Content="Add to CFG"
+								Margin="10,398,10,0"
+								VerticalAlignment="Top"
+								Height="25"
+								ToolTip="Send sun settings to the CFG Box"
+								Grid.ColumnSpan="2" />
+						</Grid>
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="74a9d16f-6370-6f86-e8e4-7cc233e85000"
+					Header="SUN"
+					IsEnabled="False">
+					<Grid
+						Uid="69fdeda9-79cc-1f5f-3e63-19e32678273e"
+						MinWidth="608"
+						MinHeight="255">
+						<Label
+							Uid="bb779b6c-7f2e-5cfb-c16d-4f54c609f52b"
+							Content="Sun X:"
+							HorizontalAlignment="Left"
+							Margin="445,83,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="52"
+							ToolTip="Position of the sun" />
+						<Slider
+							Name="SunXSlider"
+							Uid="afd2261d-544d-f6f0-718a-350c4aa24970"
+							Margin="497,108,128,0"
+							VerticalAlignment="Top"
+							Maximum="1"
+							Value="200"
+							Minimum="-1"
+							ToolTip="Position of the sun" />
+						<TextBox
+							Uid="97553ebd-9570-2ad1-f1a0-a75f290b5834"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="441,108,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="56"
+							FontSize="16"
+							TextAlignment="Right"
+							ToolTip="Position of the sun"
+							Text="{Binding Value, ElementName=SunXSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="ffc6ed6e-77a5-17f1-ab81-49a44aef121f"
+							Content="Sun Y:"
+							HorizontalAlignment="Left"
+							Margin="445,132,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="51"
+							ToolTip="Position of the sun" />
+						<Slider
+							Name="SunYSlider"
+							Uid="8897de23-5db3-88bb-54a8-beacad91cc66"
+							Margin="497,156,128,0"
+							VerticalAlignment="Top"
+							Maximum="1"
+							Value="200"
+							Minimum="-1"
+							ToolTip="Position of the sun" />
+						<TextBox
+							Uid="5c9d0032-49db-45ca-4c3e-ecef4b2de001"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="441,156,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="56"
+							FontSize="16"
+							TextAlignment="Right"
+							ToolTip="Position of the sun"
+							Text="{Binding Value, ElementName=SunYSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="4b3b888e-d074-1181-323d-abfcb9446a19"
+							Content="Sun Z:"
+							HorizontalAlignment="Left"
+							Margin="445,181,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="52"
+							ToolTip="Position of the sun" />
+						<Slider
+							Name="SunZSlider"
+							Uid="4972e3b4-b551-da43-1351-3b7570cb3d26"
+							Margin="497,205,128,0"
+							VerticalAlignment="Top"
+							Maximum="1"
+							Value="200"
+							Minimum="-1"
+							ToolTip="Position of the sun" />
+						<TextBox
+							Uid="251dbcc8-8156-61f2-7f8c-2a9d9ece8b07"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="441,205,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="56"
+							FontSize="16"
+							TextAlignment="Right"
+							ToolTip="Position of the sun"
+							Text="{Binding Value, ElementName=SunZSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Grid
+							Uid="683bd2d3-96bb-d9b0-4460-3722940ba166"
+							HorizontalAlignment="Left"
+							Height="170"
+							VerticalAlignment="Top"
+							Width="170"
+							Margin="10,3,0,0">
+							<Controls1:ColorWheelControl
+								ColorWheelControl.Name="SunColorWheel"
+								FrameworkElement.ToolTip="Sun Colour (r_lightTweakSunColor)"
+								ColorWheelControl.Palette="{Binding Palette, Mode=OneWay}" />
+						</Grid>
+						<Slider
+							Name="SunBrightnessSlider"
+							Uid="fd348400-4527-32c3-f010-c9c58aa53c45"
+							Margin="5,182,0,0"
+							VerticalAlignment="Top"
+							Maximum="255"
+							Value="14"
+							Minimum="0"
+							SmallChange="1"
+							RenderTransformOrigin="0.5,0.5"
+							HorizontalAlignment="Left"
+							Width="177"
+							ToolTip="Sun Brightness (r_lightTweakSunLight)">
+							<UIElement.RenderTransform>
+								<TransformGroup>
+									<ScaleTransform />
+									<SkewTransform />
+									<RotateTransform
+										Angle="0.004" />
+									<TranslateTransform />
+								</TransformGroup>
+							</UIElement.RenderTransform>
+						</Slider>
+						<Label
+							Uid="9da133c6-d590-316a-0c44-e0f54acfcc74"
+							Content="Sun Pitch:"
+							HorizontalAlignment="Left"
+							Margin="208,83,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="83"
+							ToolTip="Rotation of the sun (r_lightTweakSunDirection)"
+							Height="20" />
+						<TextBox
+							Uid="199dc3eb-8d9a-8ee0-0e08-77abcdea4e9f"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="208,211,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="97"
+							FontSize="16"
+							TextAlignment="Center"
+							ToolTip="Rotation of the sun (r_lightTweakSunDirection)"
+							Text="{Binding Value, ElementName=SunPitchDial, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="615cf124-0369-2bd6-1902-f1e264cee721"
+							Content="Sun Yaw:"
+							HorizontalAlignment="Left"
+							Margin="333,83,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="82"
+							ToolTip="Rotation of the sun (r_lightTweakSunDirection)"
+							Height="20" />
+						<TextBox
+							Uid="c7da5543-2208-38ab-5312-8e875dbf6421"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="333,211,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="97"
+							FontSize="16"
+							TextAlignment="Center"
+							ToolTip="Rotation of the sun (r_lightTweakSunDirection)"
+							Text="{Binding Value, ElementName=SunYawDial, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Button
+							Name="SendSunToCFGButton"
+							Uid="59d041f6-6b73-e70a-ed71-00979cfe2940"
+							Content="Add to CFG"
+							Margin="208,240,1,0"
+							VerticalAlignment="Top"
+							Height="34"
+							ToolTip="Send sun settings to the CFG Box" />
+						<TextBox
+							Uid="77675520-860f-0296-4524-0e56744ecd59"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="74,207,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="46"
+							FontSize="16"
+							TextAlignment="Right"
+							ToolTip="Sun Brightness (r_lightTweakSunLight)"
+							Text="{Binding Value, ElementName=SunBrightnessSlider, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Label
+							Uid="23eccf9d-8efd-d7ad-4af2-da9722149c54"
+							Content="Sky temp:"
+							HorizontalAlignment="Left"
+							Margin="195,5,0,0"
+							VerticalAlignment="Top"
+							FontSize="16" />
+						<Separator
+							HorizontalAlignment="Left"
+							Height="23"
+							Margin="367,147,0,0"
+							VerticalAlignment="Top"
+							Width="143"
+							RenderTransformOrigin="0.5,0.5">
+							<UIElement.RenderTransform>
+								<RotateTransform
+									Angle="90" />
+							</UIElement.RenderTransform>
+						</Separator>
+						<TextBox
+							Uid="08664ee9-ec57-6f11-aace-134f5db3739e"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="318,4,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="78"
+							FontSize="16"
+							TextAlignment="Right"
+							Text="{Binding Value, ElementName=skyTempBar, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Slider
+							Name="skyTempBar"
+							Uid="ccf9a6a3-0511-9243-a88f-2c1dacffe031"
+							Margin="401,3,1,0"
+							VerticalAlignment="Top"
+							Value="6500"
+							Maximum="25000" />
+						<Label
+							Uid="266db987-c5e7-b102-bd7c-792f7a5d7a97"
+							Content="Sky brightness:"
+							HorizontalAlignment="Left"
+							Margin="195,30,0,0"
+							VerticalAlignment="Top"
+							FontSize="16" />
+						<TextBox
+							Uid="7bf33b7f-cf1a-e343-0bd4-5fc8bff4c3ab"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="319,28,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="42"
+							FontSize="16"
+							TextAlignment="Right"
+							FlowDirection="RightToLeft"
+							Text="{Binding Value, ElementName=skyBrightnessBar, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Slider
+							Name="skyBrightnessBar"
+							Uid="a4c7e2ed-4d46-ddb7-a448-0e948c13184a"
+							Margin="366,28,1,0"
+							VerticalAlignment="Top"
+							Value="1"
+							Maximum="20" />
+						<CheckBox
+							Name="skyTransitionToggle"
+							Uid="709e9515-640b-b817-7689-1a13663af1c9"
+							Content="Transition"
+							HorizontalAlignment="Left"
+							Margin="4,234,0,0"
+							VerticalAlignment="Top" />
+						<CheckBox
+							Name="removeSunFlareToggle"
+							Uid="9741ceb9-d696-3151-8416-d7d1c1ae57f7"
+							Content="Remove Flare"
+							HorizontalAlignment="Left"
+							Margin="93,234,0,0"
+							VerticalAlignment="Top" />
+						<CheckBox
+							Name="SyncSkyTemp"
+							Uid="2ab215bc-5256-89a0-cb0f-2ebc32a4776a"
+							Content="Sync Sky Temp to Sun Color"
+							HorizontalAlignment="Left"
+							Margin="4,256,0,0"
+							VerticalAlignment="Top" />
+						<Label
+							Uid="bedb4557-80d2-3fb4-446c-ecf58c45f6c8"
+							Content="Sun Quality:"
+							HorizontalAlignment="Left"
+							Margin="195,55,0,0"
+							VerticalAlignment="Top"
+							FontSize="16" />
+						<TextBox
+							Uid="51572332-c787-6772-2eb8-cc86a795fee0"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="343,54,0,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="18"
+							FontSize="16"
+							TextAlignment="Right"
+							FlowDirection="RightToLeft"
+							Text="{Binding Value, ElementName=SunQualitySlider, Mode=TwoWay, StringFormat={}{0}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<Slider
+							Name="SunQualitySlider"
+							Uid="7c7a6d9e-98d2-3b24-6073-e5ea66aafc85"
+							Margin="366,56,1,0"
+							VerticalAlignment="Top"
+							Value="2"
+							Maximum="10"
+							Minimum="1"
+							IsSnapToTickEnabled="True"
+							IsDirectionReversed="True" />
+						<XAML:Dial
+							Name="SunPitchDial"
+							ValueChanged="SunAngle_ValueChanged"
+							HorizontalAlignment="Left"
+							Height="98"
+							Margin="208,108,0,0"
+							VerticalAlignment="Top"
+							Width="97"
+							Value="200" />
+						<XAML:Dial
+							Name="SunYawDial"
+							ValueChanged="SunAngle_ValueChanged"
+							HorizontalAlignment="Left"
+							Height="98"
+							Margin="333,108,0,0"
+							VerticalAlignment="Top"
+							Width="97"
+							Value="200" />
+						<Label
+							Uid="0e896618-264d-8fe2-d274-901ab32d97af"
+							Content="Sky Rotation:"
+							HorizontalAlignment="Right"
+							Margin="777,83,0,0"
+							VerticalAlignment="Top"
+							FontSize="16"
+							Width="107"
+							ToolTip="Rotation of the sun (r_lightTweakSunDirection)"
+							Height="20" />
+						<TextBox
+							Uid="1f560b6d-7acb-9af5-fe1b-f014e1880083"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Right"
+							Height="24"
+							Margin="0,207,10,0"
+							TextWrapping="Wrap"
+							VerticalAlignment="Top"
+							Width="97"
+							FontSize="16"
+							TextAlignment="Center"
+							ToolTip="Rotation of the sun (r_lightTweakSunDirection)"
+							Text="{Binding Value, ElementName=SkyRotation_Dial, Mode=TwoWay, StringFormat={}{0:N2}, UpdateSourceTrigger=PropertyChanged}"
+							BorderBrush="{x:Null}" />
+						<XAML:Dial
+							Name="SkyRotation_Dial"
+							ValueChanged="SkyRotation_Dial_ValueChanged"
+							HorizontalAlignment="Right"
+							Height="98"
+							Margin="0,104,10,0"
+							VerticalAlignment="Top"
+							Width="97"
+							Value="200" />
+						<Separator
+							HorizontalAlignment="Right"
+							Height="23"
+							Margin="0,147,43,0"
+							VerticalAlignment="Top"
+							Width="143"
+							RenderTransformOrigin="0.5,0.5">
+							<UIElement.RenderTransform>
+								<RotateTransform
+									Angle="90" />
+							</UIElement.RenderTransform>
+						</Separator>
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="416e47bb-ef0b-7893-8bea-a95e080a8833"
+					Header="GUNS"
+					IsEnabled="False">
+					<Grid
+						Uid="5a7c36db-dd54-9db9-70ef-103135cead4a"
+						MinWidth="589"
+						MinHeight="359">
+						<ListBox
+							Name="WeaponClassSelector"
+							HorizontalAlignment="Left"
+							Margin="10,10,0,35"
+							Width="177" />
+						<ListBox
+							Name="WeaponSelector"
+							HorizontalAlignment="Left"
+							Margin="192,10,0,35"
+							Width="177" />
+						<ScrollViewer
+							VerticalScrollBarVisibility="Auto"
+							HorizontalScrollBarVisibility="Auto"
+							Margin="374,5,0,0"
+							HorizontalAlignment="Left"
+							Width="570"
+							VerticalAlignment="Top"
+							Height="396">
+							<Grid
+								Name="grdChampions"
+								Uid="6c5e0d73-55be-7da3-78dd-93e1d19691f4"
+								HorizontalAlignment="Left"
+								Height="902"
+								VerticalAlignment="Top"
+								Width="546">
+								<Button
+									Uid="ab38bc93-a50b-dd2e-8dd0-d01cdf6142bc"
+									Margin="10,10,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="2" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_multicam_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="faeb5e3c-1bab-8674-92ff-e27749d8ccda"
+									Margin="143,10,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="3" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_atacs_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="799e1b5d-0295-cd3f-df80-deee84869d16"
+									Margin="276,10,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="4" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_erdl_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="73a5d69a-96ab-7748-48b2-180cc3b694b5"
+									Margin="409,10,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="5" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_choco_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="c3bef604-c9c3-3927-1f1d-1b2a3c86010c"
+									Margin="10,79,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="6" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_tiger_blue_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="72dccb61-5932-c62f-d326-31e3e9320a28"
+									Margin="143,79,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="7" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_matuka_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="8ee929ec-d9c7-d153-af6b-538d7a1d3bc2"
+									Margin="276,79,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="8" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_ghostex_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="f8aa0cb1-21da-ab82-c7f8-f09c98434fec"
+									Margin="409,79,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="9" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_kryptek_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="133ef313-729c-8744-780b-c2c705a14bb5"
+									Margin="10,148,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="10" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_carbon.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="dd326eeb-1188-ca4d-a63e-c7cfe9b6386c"
+									Margin="276,148,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="12" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_artofwar_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="877a671b-27df-3e25-c823-80cf5ebaa625"
+									Margin="143,148,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="11" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_blossom_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="29b13aac-7211-0164-a573-6c5daa749ec1"
+									Margin="409,148,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="13" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_ronin_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="9dac56d2-c426-c3d6-49f3-1464917e6ceb"
+									Margin="10,217,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="14" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_skulls_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="af23a198-0f05-a85a-0379-e16bbbc89354"
+									Margin="143,217,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="15" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_gold_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="08fdbe85-080e-e7ff-63ed-e01d5dff6f26"
+									Margin="276,217,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="16" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/Base/menu_camo_diamond.png" />
+									</Control.Background>
+								</Button>
+								<Label
+									Uid="09c58007-ef50-c2bc-fb03-9aade26b0781"
+									Content="DLC1:"
+									HorizontalAlignment="Left"
+									Margin="10,295,0,0"
+									VerticalAlignment="Top" />
+								<Button
+									Uid="d3dfc05f-6381-90dd-a23b-4b172f3d4b03"
+									Margin="10,317,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="17" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_elite_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="3b63ba09-8a03-9603-023a-0c0b6d5105f8"
+									Margin="143,317,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="18" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_bo2_collectors_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="9cbe5fe5-9c1f-a3a5-a334-6615a3a493be"
+									Margin="276,317,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="19" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_junglewarfare_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="27a496b8-cc07-d57e-bd49-d04756d12251"
+									Margin="409,317,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="21" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_benjamins_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="cf315336-ae7f-6ce3-15bf-97ce23eef25e"
+									Margin="10,386,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="22" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_dayofdead_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="d7534ea6-dead-18f0-e1e9-dfd6cc5e4cd1"
+									Margin="143,386,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="23" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_graffiti_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="50de1512-c372-093f-b237-114735afb1cf"
+									Margin="276,386,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="24" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_kawaii_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="08a07256-4a7e-58a4-6318-ee96cf0da0b6"
+									Margin="409,386,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="25" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_partyrock_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="0ebbc673-a20f-e3eb-0f49-2575cca8e331"
+									Margin="10,455,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="26" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_zombie_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="59800f37-44be-c752-7186-ed5ad5a93aa5"
+									Margin="143,455,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="27" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_viperr_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="6ed45a97-a2f4-b3c0-87bd-f935252e8cba"
+									Margin="276,455,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="28" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_bacon_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="bf5ebd34-468c-2ef8-73f3-9c88b5910e65"
+									Margin="409,455,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="29" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_ghosts_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="71de800e-75d4-953c-4fcc-d2014a1da242"
+									Margin="10,524,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="30" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_paladin_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="172532fa-7a4b-5018-62a5-fa000537fef6"
+									Margin="143,524,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="31" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_cyborg_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="a52693af-1b50-bfe5-80c8-6fc073f7e456"
+									Margin="276,524,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="34" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_aqua_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="828e5950-f66b-931a-678d-0e2e7a3c8f18"
+									Margin="409,524,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="35" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_breach_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="b652dcce-fdf6-dff2-4c66-97820b58dc6a"
+									Margin="10,593,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="36" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_coyote_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="abafa4c1-7ba9-b88a-7992-3dc30cb74444"
+									Margin="143,593,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="37" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_glam_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="97f15739-2da5-535f-67ae-35055e98880f"
+									Margin="276,593,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="38" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_rogue_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="d66da4b0-e38c-536f-5299-3d64bf2ed395"
+									Margin="409,593,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="39" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_packapunch_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="b3485321-4566-93c5-445c-44fa458559e1"
+									Margin="10,662,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="45" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC1/menu_camo_aw_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Label
+									Uid="67122e09-6e49-55b8-e89e-440bf0fb9438"
+									Content="DLC2:"
+									HorizontalAlignment="Left"
+									Margin="10,743,0,0"
+									VerticalAlignment="Top" />
+								<Button
+									Uid="0be4a0db-d44f-6aa9-ded9-91309f740dcd"
+									Margin="10,765,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="20" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_uk_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="915a5c3f-6b1b-b24c-9bf2-cbc700b9a349"
+									Margin="143,765,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="32" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_dragon_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="a51e0bc7-4da1-3592-84a8-886fdd88b673"
+									Margin="276,765,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="33" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_comics_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="94cc7791-02a0-701d-5331-705c08e16925"
+									Margin="409,765,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="44" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_afterlife_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="94684736-6755-f12b-c925-0c73e2dcd512"
+									Margin="10,834,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="40" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_deadmanshand_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="8936583c-0eed-c5a8-eeae-516fdc352ca3"
+									Margin="143,834,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="41" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_beast_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="9539633e-221f-291d-4bda-ca7bf6a98d77"
+									Margin="276,834,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="42" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_octane_pattern.png" />
+									</Control.Background>
+								</Button>
+								<Button
+									Uid="b01f5d5b-e0ab-2738-9fa3-a5a716bc1594"
+									Margin="409,834,0,0"
+									Width="128"
+									Height="64"
+									HorizontalAlignment="Left"
+									VerticalAlignment="Top">
+									<FrameworkElement.DataContext>
+										<local:camo
+											ID="43" />
+									</FrameworkElement.DataContext>
+									<Control.Background>
+										<ImageBrush
+											ImageSource="/BO2 Console V4;component/Resources/Camos/DLC2/menu_camo_115_pattern.png" />
+									</Control.Background>
+								</Button>
+							</Grid>
+						</ScrollViewer>
+						<Grid
+							Uid="7f3469f9-40a3-19f2-3b0c-3d12442dce44"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="10,0,0,5"
+							VerticalAlignment="Bottom"
+							Width="359">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<Button
+								Name="ClearWeaponsButton"
+								Uid="7e14d921-7b15-5ef7-2a11-f67c7c76138f"
+								Content="Clear Selected Weapons"
+								Margin="0,0,3,0"
+								VerticalAlignment="Center"
+								Height="24" />
+							<Button
+								Name="WeaponChangerToggle"
+								Uid="8d8236c5-0e74-1bd4-6a06-759ea225e371"
+								Content="Enable Weapon Changer"
+								Margin="2,0,0,0"
+								VerticalAlignment="Center"
+								Height="24"
+								Grid.Column="1" />
+						</Grid>
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="3c8661d4-96a7-7d7e-71d6-54914a769cc5"
+					Header="ANIM"
+					IsEnabled="False">
+					<Grid
+						Uid="0d4dadf9-41aa-12d0-05f9-140f0658bb05"
+						MaxHeight="560"
+						MinWidth="700">
+						<Border
+							BorderBrush="{DynamicResource DefaultColor}"
+							BorderThickness="1"
+							HorizontalAlignment="Right"
+							VerticalAlignment="Top"
+							Width="349"
+							Height="349"
+							Margin="0,10,10,0">
+							<Image
+								Name="AnimViewer"
+								ImageBehavior.AnimateInDesignMode="True"
+								Margin="1,0,0,1" />
+						</Border>
+						<ListBox
+							Name="AnimCategorySelector"
+							Height="52"
+							Margin="10,10,364,0"
+							VerticalAlignment="Top" />
+						<ListBox
+							Name="AnimSelector"
+							Uid="1234123"
+							Height="264"
+							Margin="10,95,364,0"
+							VerticalAlignment="Top" />
+						<Controls2:AutoCompleteBox
+							AutoCompleteBox.Name="AnimSearcher"
+							UIElement.Uid="8a46c481-446b-e46a-4d8f-06cda2b3f188"
+							Control.TabIndex="0"
+							FrameworkElement.Margin="10,67,364,0"
+							FrameworkElement.VerticalAlignment="Top"
+							AutoCompleteBox.ValueMemberPath="Name" />
+						<Grid
+							Uid="1ba8842e-d6ef-2fe8-b805-1b9eba43d0f4"
+							Height="54"
+							Margin="10,391,10,0"
+							VerticalAlignment="Top">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="5*" />
+								<ColumnDefinition
+									Width="1*" />
+								<ColumnDefinition
+									Width="5*" />
+							</Grid.ColumnDefinitions>
+							<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+								Name="appbar_arrow_left"
+								Grid.Column="1"
+								Width="76"
+								Height="76"
+								Clip="F1 M0,0 L76,0 L76,76 L0,76 L0,0"
+								VerticalAlignment="Top"
+								HorizontalAlignment="Center"
+								RenderTransformOrigin="0.5,0.5"
+								Margin="0,0,0.3,0">
+								<UIElement.RenderTransform>
+									<TransformGroup>
+										<ScaleTransform
+											ScaleX="0.5"
+											ScaleY="0.5" />
+										<SkewTransform />
+										<RotateTransform />
+										<TranslateTransform />
+									</TransformGroup>
+								</UIElement.RenderTransform>
+								<Path
+									Width="39.25"
+									Height="28"
+									Canvas.Left="17.75"
+									Canvas.Top="24"
+									Stretch="Fill"
+									Fill="{DynamicResource DefaultColor}"
+									Data="F1 M57,42 L57,34 L32.25,34 L42.25,24 L31.75,24 L17.75,38 L31.75,52 L42.25,52 L32.25,42 L57,42" />
+							</Canvas>
+							<Controls2:AutoCompleteBox
+								AutoCompleteBox.Name="Anim1Textbox"
+								UIElement.Uid="90869081-4190-2ab3-fac1-a4ab75911c87"
+								Grid.ColumnSpan="1"
+								FrameworkElement.Height="23"
+								AutoCompleteBox.Text=""
+								FrameworkElement.VerticalAlignment="Top"
+								FrameworkElement.Margin="0,26,0,0" />
+							<Controls2:AutoCompleteBox
+								AutoCompleteBox.Name="Anim2Textbox"
+								UIElement.Uid="8f8948ea-79a9-501c-97c9-8366895bb73e"
+								FrameworkElement.Height="23"
+								AutoCompleteBox.Text=""
+								FrameworkElement.VerticalAlignment="Top"
+								Grid.Column="2"
+								Grid.ColumnSpan="1"
+								FrameworkElement.Margin="0,26,0,0" />
+							<Label
+								Uid="f5a5af69-d5d7-92c6-9173-36ae826e7618"
+								Content="Replace this animation..."
+								HorizontalAlignment="Right"
+								Margin="0,4,0,0"
+								VerticalAlignment="Top" />
+							<Label
+								Uid="c6634f1b-81cd-22d5-c51e-55a5263258c2"
+								Content="... with this animation"
+								HorizontalAlignment="Left"
+								VerticalAlignment="Top"
+								Grid.Column="2"
+								Margin="0,4,0,0" />
+						</Grid>
+						<RadioButton
+							Name="TargetAnimationRadio"
+							Uid="56a51f28-c6b3-582d-bd16-8a7ca039ad49"
+							Content="Target Animation"
+							HorizontalAlignment="Left"
+							Margin="10,364,0,0"
+							VerticalAlignment="Top"
+							IsChecked="True" />
+						<RadioButton
+							Name="SourceAnimationRadio"
+							Uid="6a82028e-0adf-e827-da82-2fb97f216c5f"
+							Content="Source Animation"
+							HorizontalAlignment="Left"
+							Margin="166,364,0,0"
+							VerticalAlignment="Top" />
+						<Button
+							Name="SwapAnimationButton"
+							Uid="6285741b-1fc8-5464-220a-08b7f659828b"
+							Content="Replace"
+							Margin="10,450,10,0"
+							VerticalAlignment="Top"
+							Height="30" />
+						<Button
+							Name="RestoreTargetAnimation"
+							Uid="23170c71-edaf-1de2-f7bd-7c319674d99c"
+							Content="Restore Target Animation"
+							Margin="10,485,10,0"
+							VerticalAlignment="Top"
+							Height="30" />
+						<Button
+							Name="RestoreAllAnimations"
+							Uid="2b602ba9-4ab4-6e80-9d2e-48d40170f181"
+							Content="Restore All Animations"
+							Margin="10,520,10,0"
+							VerticalAlignment="Top"
+							Height="30" />
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="7347a3ff-4809-2db0-9267-6b0ba333beae"
+					Header="DEMOS"
+					IsEnabled="False">
+					<Grid
+						Uid="cb0d6c31-57f8-27d7-8ba8-8680a50d1c87"
+						MinWidth="850"
+						MaxHeight="800">
+						<WPF:WebView
+							WebView.Name="demoPreviewerWebView"
+							Grid.Row="0"
+							FrameworkElement.HorizontalAlignment="Right"
+							FrameworkElement.Margin="0,5,5,0"
+							FrameworkElement.VerticalAlignment="Top"
+							FrameworkElement.Height="240"
+							FrameworkElement.Width="420" />
+						<ListBox
+							Name="DemoMapSelector"
+							MaxHeight="1000"
+							HorizontalAlignment="Left"
+							Width="210"
+							Margin="0,35,0,0" />
+						<ListBox
+							Name="DemoSelector"
+							MaxHeight="1000"
+							HorizontalAlignment="Left"
+							Width="239"
+							Margin="215,35,0,0" />
+						<Button
+							Name="EditDemoMetadataButton"
+							Uid="f231facb-652c-6192-7b33-994cdf75ca69"
+							Content="Edit Metadata"
+							HorizontalAlignment="Left"
+							Margin="459,281,0,0"
+							VerticalAlignment="Top"
+							Width="420"
+							Height="25" />
+						<ProgressBar
+							Name="DemoSkipProgressBar"
+							Uid="95a39a6f-2662-a889-cc20-e860c22f8884"
+							Visibility="Hidden"
+							HorizontalAlignment="Left"
+							Height="5"
+							Margin="459,276,0,0"
+							VerticalAlignment="Top"
+							Width="420" />
+						<TextBox
+							Name="DemoDescriptionTextbox"
+							Uid="a93fe34b-cb02-cc81-daab-4fc4be8b4815"
+							Grid.ColumnSpan="1"
+							HorizontalAlignment="Left"
+							Margin="459,437,0,0"
+							TextWrapping="Wrap"
+							Text=""
+							Width="420"
+							MinHeight="50" />
+						<Button
+							Name="EndDemoPlaybackButton"
+							Uid="0a111cdd-876a-a424-7088-260b7d319f4c"
+							Content="End Demo Playback"
+							HorizontalAlignment="Left"
+							Margin="459,345,0,0"
+							VerticalAlignment="Top"
+							Width="420"
+							Height="24" />
+						<Button
+							Name="OpenInBrowserButton"
+							Uid="fb0014aa-2135-a467-18d6-bab6d7c4ea40"
+							Content="Open in Browser"
+							HorizontalAlignment="Left"
+							Margin="459,251,0,0"
+							VerticalAlignment="Top"
+							Width="420"
+							Height="25" />
+						<Button
+							Name="RefreshDemosList"
+							Uid="a682d2d8-7d1d-c41a-be9b-387aa5754ea8"
+							Content="Refresh"
+							HorizontalAlignment="Left"
+							Margin="0,5,0,0"
+							VerticalAlignment="Top"
+							Width="210"
+							Height="25" />
+						<Button
+							Name="SelectDemoFolderButton"
+							Uid="a91a030c-4c8b-bce0-b46c-f293cc6ecdac"
+							Content="Select Folder"
+							HorizontalAlignment="Left"
+							Margin="215,5,0,0"
+							VerticalAlignment="Top"
+							Width="239"
+							Height="25" />
+						<Button
+							Name="SaveCurrentDemoButton"
+							Uid="aa33e59d-f9ae-2c2e-fa3b-3c9ae8edffa2"
+							Content="Save Demo"
+							HorizontalAlignment="Left"
+							Margin="459,379,0,0"
+							VerticalAlignment="Top"
+							Width="420"
+							Height="24"
+							IsEnabled="False" />
+						<Button
+							Name="openDemoInBrowserButton"
+							Uid="d3aa1287-41aa-8bb5-f2c6-f1b18b86f850"
+							Content="Navigate To File"
+							HorizontalAlignment="Left"
+							Margin="459,408,0,0"
+							VerticalAlignment="Top"
+							Width="420"
+							Height="24" />
+						<Separator
+							Height="10"
+							Margin="459,306,5,0"
+							VerticalAlignment="Top" />
+						<Separator
+							Height="10"
+							Margin="459,369,5,0"
+							VerticalAlignment="Top" />
+						<Grid
+							Uid="bfdc8ccd-a442-13f9-d4ed-af4f1045d3c7"
+							HorizontalAlignment="Left"
+							Height="24"
+							Margin="459,316,0,0"
+							VerticalAlignment="Top"
+							Width="420">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition />
+							</Grid.ColumnDefinitions>
+							<Button
+								Name="LoadSelectedDemoButton"
+								Uid="b90b4f6d-f9c3-5c01-2fa8-b8e8077da173"
+								Content="Load Selected Demo"
+								Margin="0,0,2.5,0"
+								VerticalAlignment="Top"
+								Height="24" />
+							<Button
+								Name="LoadDemoFromFileButton"
+								Uid="5ccceb42-3f10-e360-1896-ffbd92667bac"
+								Content="Load Demo From File"
+								Margin="2.5,0,0,0"
+								VerticalAlignment="Top"
+								Height="24"
+								Grid.Column="1" />
+						</Grid>
+					</Grid>
+				</TabItem>
+				<TabItem
+					Uid="3c4329f2-3f7a-d38c-8a7f-8f9aec110b57"
+					Header="CUSTOM"
+					IsEnabled="False">
+					<Grid
+						Uid="240c3b4c-7778-2db6-ee27-a02dfa44cac9"
+						MinWidth="589"
+						MinHeight="359">
+						<Button
+							Name="CreateCustomSliderButton"
+							Uid="def50b2c-6439-03f8-5ff9-d191afc6f707"
+							Content="Create New Slider"
+							Margin="0,10,0,0"
+							VerticalAlignment="Top"
+							Height="40" />
+						<ListBox
+							Name="CustomSliderListBox"
+							Margin="0,55,0,0"
+							HorizontalContentAlignment="Stretch" />
+					</Grid>
+				</TabItem>
+			</TabControl>
+		</Grid>
+	</Grid>
+</Window>

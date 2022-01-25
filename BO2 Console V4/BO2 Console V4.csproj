@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{11244672-68D5-45F2-A578-B5191619615E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BO2 Console V4</RootNamespace>
+    <AssemblyName>BO2 Console V4</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>BO2 Console V4.ico</ApplicationIcon>
+    <StartupObject>BO2_Console_V4.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ASMdotNET" />
+    <Reference Include="BO2PluginFramework">
+      <HintPath>..\..\BO2PluginFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="ColorWheel.Controls" />
+    <Reference Include="ColorWheel.Core" />
+    <Reference Include="Microsoft.Toolkit.Win32.UI.Controls" />
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell" />
+    <Reference Include="Newtonsoft.Json" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ScreenRecorderLib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WpfAnimatedGif" />
+    <Reference Include="Microsoft.Expression.Prototyping.Runtime" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit" />
+    <Reference Include="PresentationFramework.Aero2" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-.cs" />
+    <Compile Include="BO2_Console_V4\Address.cs" />
+    <Compile Include="BO2_Console_V4\Addresses.cs" />
+    <Compile Include="BO2_Console_V4\App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BO2_Console_V4\camo.cs" />
+    <Compile Include="BO2_Console_V4\Classes\AnimationChanger.cs" />
+    <Compile Include="BO2_Console_V4\Classes\Cache.cs" />
+    <Compile Include="BO2_Console_V4\Classes\DemoFileBuilder.cs" />
+    <Compile Include="BO2_Console_V4\Classes\DemoMetaDataUtil.cs" />
+    <Compile Include="BO2_Console_V4\Classes\Demos.cs" />
+    <Compile Include="BO2_Console_V4\Classes\DvarFinder.cs" />
+    <Compile Include="BO2_Console_V4\Classes\EmbedURLBuilder.cs" />
+    <Compile Include="BO2_Console_V4\Classes\ExternalConsole.cs" />
+    <Compile Include="BO2_Console_V4\Classes\FingerPrint.cs" />
+    <Compile Include="BO2_Console_V4\Classes\GetID.cs" />
+    <Compile Include="BO2_Console_V4\Classes\Keybind.cs" />
+    <Compile Include="BO2_Console_V4\Classes\KeybindHost.cs" />
+    <Compile Include="BO2_Console_V4\Classes\KeybindType.cs" />
+    <Compile Include="BO2_Console_V4\Classes\Login.cs" />
+    <Compile Include="BO2_Console_V4\Classes\LoginReason.cs" />
+    <Compile Include="BO2_Console_V4\Classes\LoginResult.cs" />
+    <Compile Include="BO2_Console_V4\Classes\PluginLoader.cs" />
+    <Compile Include="BO2_Console_V4\Classes\StreamableAPI.cs" />
+    <Compile Include="BO2_Console_V4\Classes\StringCipher.cs" />
+    <Compile Include="BO2_Console_V4\Classes\UIDGenerator.cs" />
+    <Compile Include="BO2_Console_V4\Classes\VersionInfo.cs" />
+    <Compile Include="BO2_Console_V4\Classes\WeaponChanger.cs" />
+    <Compile Include="BO2_Console_V4\Classes\WPFExtensions.cs" />
+    <Compile Include="BO2_Console_V4\CustomSliderAddress.cs" />
+    <Compile Include="BO2_Console_V4\CustomSliderDialog.cs" />
+    <Compile Include="BO2_Console_V4\DemoMetadataEditor.cs" />
+    <Compile Include="BO2_Console_V4\DvarEntry.cs" />
+    <Compile Include="BO2_Console_V4\DvarList.cs" />
+    <Compile Include="BO2_Console_V4\Dvars.cs" />
+    <Compile Include="BO2_Console_V4\DvarsWithDesc.cs" />
+    <Compile Include="BO2_Console_V4\Enums.cs" />
+    <Compile Include="BO2_Console_V4\GlobalKeyboardHook.cs" />
+    <Compile Include="BO2_Console_V4\GlobalKeyboardHookEventArgs.cs" />
+    <Compile Include="BO2_Console_V4\Info\Animations.cs" />
+    <Compile Include="BO2_Console_V4\Info\BuiltInCFGs.cs" />
+    <Compile Include="BO2_Console_V4\Info\DefaultFogs.cs" />
+    <Compile Include="BO2_Console_V4\Info\WeaponIDs.cs" />
+    <Compile Include="BO2_Console_V4\KeybindDialog.cs" />
+    <Compile Include="BO2_Console_V4\MainWindow.cs" />
+    <Compile Include="BO2_Console_V4\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="BO2_Console_V4\StreamableLoginDialog.cs" />
+    <Compile Include="BO2_Console_V4\Structures.cs" />
+    <Compile Include="BO2_Console_V4\Style.cs" />
+    <Compile Include="BO2_Console_V4\XAML\Dial.xaml.cs">
+      <DependentUpon>Dial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Costura\AssemblyLoader.cs" />
+    <Compile Include="ProcessedByFody.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="BO2_Console_V4\Properties\Resources.resources" />
+    <EmbeddedResource Include="Costura\asmdotnet\dll.compressed" />
+    <EmbeddedResource Include="Costura\asmdotnet\pdb.compressed" />
+    <EmbeddedResource Include="Costura\colorwheel\controls\dll.compressed" />
+    <EmbeddedResource Include="Costura\colorwheel\core\dll.compressed" />
+    <EmbeddedResource Include="Costura\costura\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\expression\prototyping\runtime\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\toolkit\win32\ui\controls\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\pdb.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\shellextensions\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\shellextensions\pdb.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\shell\dll.compressed" />
+    <EmbeddedResource Include="Costura\microsoft\windowsapicodepack\shell\pdb.compressed" />
+    <EmbeddedResource Include="Costura\newtonsoft\json\dll.compressed" />
+    <EmbeddedResource Include="Costura\octokit\dll.compressed" />
+    <EmbeddedResource Include="Costura\screenrecorderlib\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\windows\controls\input\toolkit\dll.compressed" />
+    <EmbeddedResource Include="Costura\system\windows\interactivity\dll.compressed" />
+    <EmbeddedResource Include="Costura\testplugin\dll.compressed" />
+    <EmbeddedResource Include="Costura\testplugin\pdb.compressed" />
+    <EmbeddedResource Include="Costura\wpfanimatedgif\dll.compressed" />
+    <EmbeddedResource Include="Costura\wpfanimatedgif\pdb.compressed" />
+    <EmbeddedResource Include="Costura\wpftoolkit\dll.compressed" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="BO2_Console_V4\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="BO2_Console_V4\App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="BO2_Console_V4\XAML\Dial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML\customsliderdialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML\demometadataeditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML\keybinddialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML\mainwindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML\streamablelogindialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XAML\style.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+    <Resource Include="resources\camos\base\menu_camo_artofwar_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_atacs_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_blossom_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_carbon.png" />
+    <Resource Include="resources\camos\base\menu_camo_choco_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_diamond.png" />
+    <Resource Include="resources\camos\base\menu_camo_erdl_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_ghostex_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_gold_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_kryptek_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_matuka_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_multicam_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_ronin_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_siberia_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_skulls_pattern.png" />
+    <Resource Include="resources\camos\base\menu_camo_tiger_blue_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_aqua_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_aw_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_bacon_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_benjamins_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_bo2_collectors_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_breach_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_coyote_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_cyborg_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_dayofdead_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_elite_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_ghosts_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_glam_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_graffiti_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_junglewarfare_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_kawaii_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_packapunch_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_paladin_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_partyrock_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_rogue_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_viperr_pattern.png" />
+    <Resource Include="resources\camos\dlc1\menu_camo_zombie_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_115_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_afterlife_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_beast_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_comics_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_deadmanshand_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_dragon_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_octane_pattern.png" />
+    <Resource Include="resources\camos\dlc2\menu_camo_uk_pattern.png" />
+    <Resource Include="XAML\icon.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
